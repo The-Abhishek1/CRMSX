@@ -1,0 +1,98 @@
+
+*{
+  margin: 0;
+  padding: 0;
+
+    
+}
+.div1{
+  /* background-image: url(../Images/anime1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover; */
+  height: 100vh;
+  
+}
+.div2{
+  display: grid;
+  place-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 70%;
+  transform: translate(-50%,-60%);
+}
+.h1{
+  margin: 10px;
+  text-shadow: 2px 2px 2px whitesmoke;
+  animation: anime 3s forwards infinite;
+}
+@keyframes anime {
+  0%{
+    transform: translateX(40%);
+    text-shadow: 2px 2px 2px black;
+  }
+
+  15%{
+      text-shadow: 2px 2px 2px black;
+  }
+  50%{
+    transform: translateX(-40%);
+    text-shadow: 2px 2px 2px whitesmoke;
+  }
+  60%{
+      text-shadow: 2px 2px 2px whitesmoke;
+  }
+  75%{
+      text-shadow: 2px 2px 2px rgb(255, 255, 255);
+  }
+  100%{
+    transform: translate(40%);
+    text-shadow: 2px 2px 2px whitesmoke;
+    text-shadow: 2px 2px 2px black;
+  }
+}
+.h4{
+  font-size: 18px;
+  margin: 5px;
+  text-shadow: 2px 1px 5px whitesmoke;
+}
+.img{
+  width: 120px;
+  border-radius: 50%;
+  height:120px;
+}
+.button{
+  display: grid;
+  place-items: center;
+}
+
+.b{
+ width: 150px; 
+ height:40px;
+ position: relative;
+ top: 180px;
+ font-weight: 600;
+ font-size: 18px;
+ background-color: blue;
+ border: none;
+ color: whitesmoke;
+ border-radius: 5px;
+ text-transform: uppercase;
+cursor: pointer;
+}
+.link{
+  position: relative;
+  top: 5px;
+}
+.b:hover{
+  color: blue;
+  background-color: whitesmoke;
+  box-shadow: 2px 2px 7px rgb(254, 254, 255), -2px -2px 7px white;
+}
+
+@media screen and (min-width:1200px) {
+  .button{
+    position: relative;
+    left: -1%;
+  }
+}

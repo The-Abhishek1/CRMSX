@@ -1,0 +1,177 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.message{
+  background-color: rgb(51, 51, 52);
+  width: 220px;
+  height:100px ;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 37%;
+  left: 30%;
+  z-index: 1;
+  border-radius: 10px;
+  color: rgb(255, 0, 0);
+}
+.h3{
+  text-align: center;
+  position: relative;
+  font-size: 22px;
+  top: 10px;
+}
+.success{
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  border: 1px solid rgb(187, 185, 185);
+  cursor: pointer;
+}
+.span{
+  position: relative;
+  top: 20px;
+  left: 20px;
+}
+.form{
+  height: 100vh;
+}
+.container{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 50%;
+  left: 50%;
+  width: 350px;
+  transform: translate(-50%,-50%);
+  padding: 20px;
+  color: black;
+  background-color: rgb(216, 223, 230);
+  border-radius: 15px;
+  padding: 20px;
+}
+h2{
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 17px;
+}
+.p{
+  color: red;
+  position: relative;
+  text-align: center;
+  top: -20px;
+}
+
+.user{
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  position: relative;
+  left: 40px;
+  height: 70px;
+  padding: 10px;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 10px 0 10px -10px;
+}
+.user .button{
+  position: relative;
+  width: 70px;
+  height: 50px;
+  border-radius: 10px;
+  font-size: 16px;
+  background-color: rgb(216, 226, 236);
+  cursor: pointer;
+}
+.or{
+  font-size: 17px;
+    font-style: normal;
+}
+.h4{
+  text-align: center;
+  font-size: 15px;
+  margin-bottom: 25px;
+}
+.label{
+  display: flex;
+  position: relative;
+  left: 17%;
+  font-size: 16px;
+  padding: 5px;
+  margin: -5px 0 5px 0;
+}
+.input{
+  width: 70%;
+  height: 30px;
+  border-radius: 10px;
+  position: relative;
+  left: 17%;
+  text-align: center;
+  border: none;
+  outline: none;
+}
+.icon{
+  position:relative;
+  top:-28px;
+  left: 19%;
+  color: rgb(79, 158, 158);
+}
+#check{
+  height: 14px;
+  position: relative;
+  top: -10px;
+  left: -90px;
+}
+.check{
+  position: relative;
+  top:-27px;
+  left: 24%;
+  font-size: 15px;
+}
+.button2{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 80%;
+  height: 130px;
+  position: relative;
+  left: 12%;
+  gap: 5px;
+  top: -10px;
+}
+.button2 .but{
+  width: 212px;
+  height: 30px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border: none;
+  border-radius: 7px;
+  font-size: 16px;
+  background-color: rgb(216, 226, 236);
+  cursor: pointer;
+}
+#b1{
+  color: red;
+  background-color: white;
+}
+#b2{
+  color: rgb(0, 255, 34);
+  background-color: white;
+}
+#b1:hover{
+  color: white;
+  background-color: red;
+}
+#b2:hover{
+  color: white;
+  background-color: rgb(9, 255, 0);
+}
+@media screen and (min-width:1200px) {
+  .message{
+    left: 43%;
+  }
+  
+}
