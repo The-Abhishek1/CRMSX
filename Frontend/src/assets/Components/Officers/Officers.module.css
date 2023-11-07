@@ -1,12 +1,12 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-.whole{
+.whole {
   height: 98.7vh;
 }
-.h2{
+.h2 {
   text-align: center;
   margin: 10px;
   font-size: 19px;
@@ -14,14 +14,14 @@
   position: relative;
   top: 65px;
 }
-.container{
+.container {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   align-items: center;
   justify-content: space-between;
   background-color: rgb(212, 223, 234);
-  margin: 10px  20px 20px 20px ;
+  margin: 10px 20px 20px 20px;
   padding: 20px;
   height: 84vh;
   border-radius: 20px;
@@ -29,7 +29,7 @@
   position: relative;
   top: 65px;
 }
-.card{
+.card {
   background-color: rgb(200, 213, 226);
   width: 80%;
   position: relative;
@@ -37,52 +37,49 @@
   padding: 20px;
   border-radius: 20px;
 }
-.card:hover{
+.card:hover {
   background-color: rgb(190, 205, 220);
 }
-.img{
+.img {
   border-radius: 10px;
   position: relative;
   left: 25%;
 }
-.h4{
+.h4 {
   text-align: center;
   text-transform: uppercase;
   margin: 5px;
 }
-.p{
+.p {
   position: relative;
   line-height: 20px;
   left: 25%;
-  color: rgb(0, 0, 0);
   width: 50%;
 }
 
-
-@media screen and (min-width:1200px) {
-  .container{
+@media screen and (min-width: 1200px) {
+  .container {
     display: grid;
     grid-template-columns: 25% 25% 25%;
     justify-content: space-around;
   }
-  .card{
+  .card {
     position: relative;
     left: 0px;
     padding: 30px;
     width: 350px;
   }
-  .img{
+  .img {
     position: relative;
-    left:5%;
+    left: 5%;
     width: 180px;
   }
-  .h4{
+  .h4 {
     text-align: start;
     margin-left: 15px;
   }
-  .p{
+  .p {
     position: relative;
     left: 15px;
   }
-
 }

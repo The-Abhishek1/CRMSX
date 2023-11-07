@@ -1,31 +1,31 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-.form{
+.form {
   height: 100vh;
 }
-.container{
+.container {
   color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 80%;
+  width: 70%;
   height: 80vh;
-  position:absolute;
+  position: absolute;
   top: 15%;
-  left: 10%;
-  background: rgb(238, 245, 251); 
+  left: 15%;
+  background: rgb(238, 245, 251);
   color: black;
   padding: 20px;
+  border-radius: 50px;
 }
-.h2{
+.h2 {
   margin-top: 15px;
-
 }
 
-.img{
+.img {
   height: 80px;
   width: 80px;
   display: block;
@@ -35,46 +35,39 @@
   border: 1px solid rgb(186, 186, 186);
   background-color: aliceblue;
 }
-.upload{
-color: rgb(255, 0, 0);
-margin-top: 25px;
-font-size: 16px;
-font-weight: 100;
-
+.upload {
+  color: rgb(255, 0, 0);
+  margin-top: 25px;
+  font-size: 16px;
+  font-weight: 100;
 }
-.up{
+.up {
   width: 80px;
   height: 20px;
   position: relative;
   top: -20px;
 }
-.item{
+.item {
   display: flex;
   flex-direction: column;
-  background-color:rgb(221, 235, 247) ;
-  height: 400px;
-  width: 280px;
+  background-color: rgb(221, 235, 247);
   position: relative;
-  top: -5px;
+  width: 280px;
+  top: 5px;
   justify-content: flex-start;
   padding: 30px;
+  height: 320px;
+  border-radius: 15px;
 }
-.item .label{
-  position: relative;
-  top: 2px;
-}
-.item .input{
-  position: relative;
-  top: -15px;
-  margin: 30px 0 0 0;
+.item .input {
   height: 27px;
-  border-radius: 7px;
-  text-align: center;
   outline: none;
-  border:none ;
+  border: none;
+  border-radius: 10px;
+  margin-top: -7px;
 }
-.but{
-  height: 50px;
+
+.but {
   position: relative;
   top: 30px;
   display: flex;
@@ -82,13 +75,13 @@ font-weight: 100;
   justify-content: space-around;
   align-items: center;
 }
-.but .button{
+.but .button {
   text-transform: uppercase;
   width: 80px;
-  height:30px;
+  height: 30px;
   font-weight: 700;
   border: none;
-  border-radius: 3px;
+  border-radius: 5px;
   cursor: pointer;
 }
 .edit {
@@ -97,32 +90,31 @@ font-weight: 100;
   height: 280px;
   justify-content: space-evenly;
   position: absolute;
-  top: 12px;
+  top: 10px;
   right: 35px;
-  }
-  .edit .icon{
-    color: rgb(120, 117, 117);
-  }
-  #submit:hover{
-    color: white;
-    background-color: rgb(8, 192, 8);
-  }
-  #reset:hover{
-    color: white;
-    background-color: rgb(255, 0, 0);
-  }
-  #reset{
-    color: red;
-    background-color: white;
-  }
-#submit {
-  color:rgb(8, 192, 8);
+}
+.edit .icon {
+  color: rgb(120, 117, 117);
+}
+#submit:hover {
+  color: white;
+  background-color: rgb(8, 192, 8);
+}
+#reset:hover {
+  color: white;
+  background-color: rgb(255, 0, 0);
+}
+#reset {
+  color: red;
   background-color: white;
 }
-@media screen and (min-width:1200px) {
-  .container{
+#submit {
+  color: rgb(8, 192, 8);
+  background-color: white;
+}
+@media screen and (min-width: 1200px) {
+  .container {
     width: 25%;
     left: 35%;
   }
-  
 }

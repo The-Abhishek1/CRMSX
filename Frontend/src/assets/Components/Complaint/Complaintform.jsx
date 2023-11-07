@@ -143,13 +143,17 @@ function Complaintform(props) {
   return (
     <>
       {success ? (
-        <div className={cf.success} style={props.theme}>
-          <h1 className={cf.s} style={props.themeSettings}>
+        <div className={cf.success} style={props.theme1}>
+          <h1 className={cf.s} style={props.theme1}>
             Success
           </h1>
-          <Check className={cf.c} style={props.themeSettings}></Check>
+          <Check
+            className={cf.c}
+            style={props.theme1}
+            sx={{ fontSize: 32 }}
+          ></Check>
           <button type="button" onClick={handleClick} className={cf.bu}>
-            OK
+            Continue
           </button>
         </div>
       ) : null}
@@ -157,13 +161,13 @@ function Complaintform(props) {
         <form
           action=""
           onSubmit={handleSubmit}
-          style={props.themeSettings}
+          style={props.theme1}
           className={cf.form}
         >
           <h1 className={cf.h1}>FIR</h1>
           <h5 className={cf.h5}>(First Information Report)</h5>
           <div className={cf.container}>
-            <div className={cf.item} style={props.theme}>
+            <div className={cf.item} style={props.theme2}>
               <h3 className={cf.h3}>Complaint details</h3>
               <label htmlFor="complaint_date" className={cf.label}>
                 Complaint Date:
@@ -205,7 +209,7 @@ function Complaintform(props) {
               />
             </div>
 
-            <div className={cf.item} style={props.theme}>
+            <div className={cf.item} style={props.theme2}>
               <h3 className={cf.h3}>Incident Information</h3>
               <label htmlFor="incident_date" className={cf.label}>
                 Incident Date:
@@ -244,7 +248,7 @@ function Complaintform(props) {
               />
             </div>
 
-            <div className={cf.item} style={props.theme}>
+            <div className={cf.item} style={props.theme2}>
               <h3 className={cf.h3}>Complainant Info</h3>
               <label htmlFor="complainant_name" className={cf.label}>
                 Name:
@@ -340,7 +344,7 @@ function Complaintform(props) {
               )}
             </div>
 
-            <div className={cf.item} style={props.theme}>
+            <div className={cf.item} style={props.theme2}>
               <h3 className={cf.h3}>Complainant Type</h3>
               <select
                 name="complainant_type"
@@ -375,7 +379,7 @@ function Complaintform(props) {
               </select>
             </div>
 
-            <div className={cf.item} style={props.theme}>
+            <div className={cf.item} style={props.theme2}>
               <h3 className={cf.h3}>Vehicle Information</h3>
               <label htmlFor="vehicle_make" className={cf.label}>
                 Make:{" "}
@@ -421,7 +425,7 @@ function Complaintform(props) {
               />
             </div>
 
-            <div className={cf.item} style={props.theme}>
+            <div className={cf.item} style={props.theme2}>
               <h3 className={cf.h3}>Suspect Info(if Known)</h3>
               <label htmlFor="suspect_name" className={cf.label}>
                 Name:{" "}
@@ -462,7 +466,7 @@ function Complaintform(props) {
               ></textarea>
             </div>
 
-            <div className={cf.item} style={props.theme}>
+            <div className={cf.item} style={props.theme2}>
               <h3 className={cf.h3}>Witness Information</h3>
               <label htmlFor="witness_name" className={cf.label}>
                 Name:{" "}
@@ -500,7 +504,7 @@ function Complaintform(props) {
               ></textarea>
             </div>
 
-            <div className={cf.item} style={props.theme}>
+            <div className={cf.item} style={props.theme2}>
               <h3 className={cf.h3}>Evidence Information</h3>
               <label htmlFor="evidence_info" className={cf.label}>
                 (Describe any physical or digital evidence related to incident,
@@ -525,7 +529,7 @@ function Complaintform(props) {
               />
             </div>
 
-            <div className={cf.item} style={props.theme}>
+            <div className={cf.item} style={props.theme2}>
               <h3 className={cf.h3}>Injuries</h3>
               <label htmlFor="injuries" className={cf.label}>
                 (Descibe any injuries sustained by victim or suspects.)
@@ -541,7 +545,7 @@ function Complaintform(props) {
               ></textarea>
             </div>
 
-            <div className={cf.item} style={props.theme}>
+            <div className={cf.item} style={props.theme2}>
               <h3 className={cf.h3}>Description of the Incident</h3>
               <label htmlFor="incident_description" className={cf.label}>
                 (Provide detailed narrative information about the incident.)
@@ -560,7 +564,7 @@ function Complaintform(props) {
               )}
             </div>
 
-            <div className={cf.item} style={props.theme}>
+            <div className={cf.item} style={props.theme2}>
               <h3 className={cf.h3}>Additional Comments</h3>
               <label htmlFor="comments" className={cf.label}>
                 (Space for additional comments.)
@@ -576,7 +580,7 @@ function Complaintform(props) {
               ></textarea>
             </div>
 
-            <div className={cf.item} style={props.theme}>
+            <div className={cf.item} style={props.theme2}>
               <h3 className={cf.h3}>Declaration:</h3>
               <input
                 type="checkbox"

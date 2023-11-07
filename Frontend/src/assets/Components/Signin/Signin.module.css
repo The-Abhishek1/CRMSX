@@ -1,12 +1,12 @@
-*{
+* {
   margin: 0;
   padding: 0;
 }
 
-.message{
+.message {
   background-color: rgb(51, 51, 52);
   width: 220px;
-  height:100px ;
+  height: 100px;
   justify-content: center;
   align-items: center;
   position: absolute;
@@ -16,162 +16,127 @@
   border-radius: 10px;
   color: rgb(255, 0, 0);
 }
-.h3{
+.h3 {
   text-align: center;
   position: relative;
   font-size: 22px;
   top: 10px;
 }
-.success{
+.success {
   position: absolute;
   right: 5px;
   top: 5px;
   border: 1px solid rgb(187, 185, 185);
   cursor: pointer;
 }
-.span{
+.span {
   position: relative;
   top: 20px;
   left: 20px;
 }
-.form{
+.form {
   height: 100vh;
 }
-.container{
+.container {
   position: absolute;
   display: flex;
   flex-direction: column;
   top: 50%;
   left: 50%;
-  width: 350px;
-  transform: translate(-50%,-50%);
+  width: 320px;
+  transform: translate(-50%, -50%);
   padding: 20px;
   color: black;
   background-color: rgb(216, 223, 230);
   border-radius: 15px;
-  padding: 20px;
+  padding: 35px 0px 5px 0px;
 }
-h2{
-  text-align: center;
-  text-transform: uppercase;
-  font-size: 17px;
-}
-.p{
+.p {
   color: red;
   position: relative;
   text-align: center;
   top: -20px;
 }
 
-.user{
-  display: flex;
-  flex-direction: row;
-  width: 80%;
-  position: relative;
-  left: 40px;
-  height: 70px;
-  padding: 10px;
-  justify-content: space-evenly;
-  align-items: center;
-  margin: 10px 0 10px -10px;
-}
-.user .button{
-  position: relative;
-  width: 70px;
-  height: 50px;
-  border-radius: 10px;
-  font-size: 16px;
-  background-color: rgb(216, 226, 236);
-  cursor: pointer;
-}
-.or{
-  font-size: 17px;
-    font-style: normal;
-}
-.h4{
+.h4 {
   text-align: center;
   font-size: 15px;
   margin-bottom: 25px;
+  margin-left: 40px;
+  width: 75%;
 }
-.label{
-  display: flex;
+.label {
   position: relative;
   left: 17%;
   font-size: 16px;
-  padding: 5px;
-  margin: -5px 0 5px 0;
+  padding-bottom: 10px;
 }
-.input{
-  width: 70%;
-  height: 30px;
-  border-radius: 10px;
+.input {
+  width: 65%;
+  height: 27px;
+  border-radius: 5px;
   position: relative;
   left: 17%;
   text-align: center;
   border: none;
   outline: none;
 }
-.icon{
-  position:relative;
-  top:-28px;
-  left: 19%;
+.icon {
+  position: relative;
+  top: -26.6px;
+  left: 18.5%;
   color: rgb(79, 158, 158);
 }
-#check{
+#check {
   height: 14px;
   position: relative;
-  top: -10px;
-  left: -90px;
+  left: -105px;
 }
-.check{
+.check {
   position: relative;
-  top:-27px;
-  left: 24%;
+  top: -17px;
+  left: 25%;
   font-size: 15px;
 }
-.button2{
+.button2 {
   display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+  flex-direction: row;
+  justify-content: space-around;
   align-items: center;
-  width: 80%;
-  height: 130px;
+  width: 75%;
+  height: 50px;
   position: relative;
-  left: 12%;
   gap: 5px;
-  top: -10px;
+  left: 12.55%;
+  transform: translateY(-25px);
 }
-.button2 .but{
-  width: 212px;
+.button2 .but {
+  border: none;
   height: 30px;
+  width: 100px;
+  border-radius: 5px;
   text-transform: uppercase;
   font-weight: 600;
-  letter-spacing: 1px;
-  border: none;
-  border-radius: 7px;
   font-size: 16px;
-  background-color: rgb(216, 226, 236);
-  cursor: pointer;
 }
-#b1{
+#b1 {
   color: red;
   background-color: white;
 }
-#b2{
+#b2 {
   color: rgb(0, 255, 34);
   background-color: white;
 }
-#b1:hover{
+#b1:hover {
   color: white;
   background-color: red;
 }
-#b2:hover{
+#b2:hover {
   color: white;
   background-color: rgb(9, 255, 0);
 }
-@media screen and (min-width:1200px) {
-  .message{
+@media screen and (min-width: 1200px) {
+  .message {
     left: 43%;
   }
-  
 }

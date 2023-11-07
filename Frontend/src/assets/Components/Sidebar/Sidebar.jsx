@@ -44,8 +44,8 @@ function Sidebar(props) {
   return (
     <>
       {showlog ? (
-        <div className={Side.logout} style={props.theme}>
-          <h3 className={Side.h3l} style={props.themeSettings}>
+        <div className={Side.logout} style={props.theme1}>
+          <h3 className={Side.h3l} style={props.theme1}>
             Are you sure you want to Logout?
           </h3>
           <button
@@ -68,7 +68,7 @@ function Sidebar(props) {
       ) : null}
 
       {showSide ? (
-        <aside className={Side.aside} style={props.themeSide}>
+        <aside className={Side.aside} style={props.theme1}>
           <h2 className={Side.h2}>CRMS</h2>
           <LocalPolice className={Side.police} />
           <Close className={Side.close} onClick={() => setSide(false)}></Close>
@@ -150,7 +150,7 @@ function Sidebar(props) {
               <h3 className={Side.h3}>Logout</h3>
             </Link>
           </div>
-          <div className={Side.gr}>
+          {/* <div className={Side.gr}>
             <h1 className={Side.g} style={props.themeSettings}>
               {great}
             </h1>
@@ -175,7 +175,7 @@ function Sidebar(props) {
           </div>
           <h1 className={Side.glast} style={props.themeSettings}>
             {great}
-          </h1>
+          </h1> */}
         </aside>
       ) : null}
     </>

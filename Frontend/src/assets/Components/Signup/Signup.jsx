@@ -87,54 +87,13 @@ function Signup(props) {
       error.password = "";
     }
 
-    //usertype Validation
-    if (!inputs.usertype) {
-      error.usertype = "Please Select account type!!";
-    } else {
-      error.usertype = "";
-    }
     return error;
   }
 
   return (
     <>
-      <form
-        onSubmit={handleSubmit}
-        className={sign.form}
-        style={props.themeSettings}
-      >
-        <div className={sign.container} style={props.theme}>
-          <h2 className={sign.h2}>Choose an account type</h2>
-          <div className={sign.user}>
-            <button
-              type="button"
-              value="police"
-              name="usertype"
-              id={sign.police}
-              className={sign.button}
-              onClick={handleInput}
-              style={props.themeSettings}
-            >
-              Police
-            </button>
-            <h2 className={sign.or}>OR</h2>
-            <button
-              type="button"
-              value="public"
-              name="usertype"
-              id={sign.public}
-              className={sign.button}
-              onClick={handleInput}
-              style={props.themeSettings}
-            >
-              Public
-            </button>
-          </div>
-          {errors.usertype === "" ? null : (
-            <p className={sign.p} id={sign.p}>
-              {errors.usertype}
-            </p>
-          )}
+      <form onSubmit={handleSubmit} className={sign.form} style={props.theme1}>
+        <div className={sign.container} style={props.theme2}>
           <h4 className={sign.h4}>
             Hello, please fill out the below form to get started.
           </h4>
@@ -150,20 +109,6 @@ function Signup(props) {
           <Person className={sign.icons}></Person>
           {errors.name === "" ? null : (
             <p className={sign.p}>{errors.username}</p>
-          )}
-          <br />
-          <label htmlFor="phonenumber" className={sign.label}>
-            Enter your Number:
-          </label>
-          <input
-            type="tel"
-            name="phonenumber"
-            className={sign.input}
-            onChange={handleInput}
-          />
-          <Call className={sign.icons}></Call>
-          {errors.phonenumber === "" ? null : (
-            <p className={sign.p}>{errors.phonenumber}</p>
           )}
           <br />
           <label htmlFor="email" className={sign.label}>
@@ -202,7 +147,6 @@ function Signup(props) {
             >
               sign up
             </button>
-            <span className={sign.span}>Already have an account?</span>
             <Link to="/signin">
               <button
                 type="button"

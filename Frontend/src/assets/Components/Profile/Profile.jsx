@@ -11,16 +11,16 @@ export default function Profile(props) {
     <>
       <form
         action=""
-        style={props.themeSettings}
+        style={props.theme1}
         className={p.form}
         onSubmit={handleSubmit}
       >
-        <div className={p.container} style={props.theme}>
+        <div className={p.container} style={props.theme2}>
           <h2 className={p.h2}>My Profile</h2>
           <img className={p.img} src={logo} />
           <h4 className={p.upload}>Edit picture</h4>
           <input type="image" src="" alt="" className={p.up} />
-          <div className={p.item} style={props.themeSettings}>
+          <div className={p.item} style={props.theme3}>
             <label htmlFor="username" className={p.label}>
               Username:
             </label>
@@ -47,9 +47,9 @@ export default function Profile(props) {
               </button>
             </div>
             <div className={p.edit}>
-              <Edit className={p.icon} />
-              <Edit className={p.icon} />
-              <Edit className={p.icon} />
+              <Edit className={p.icon} sx={{ fontSize: 20 }} />
+              <Edit className={p.icon} sx={{ fontSize: 20 }} />
+              <Edit className={p.icon} sx={{ fontSize: 20 }} />
             </div>
           </div>
         </div>

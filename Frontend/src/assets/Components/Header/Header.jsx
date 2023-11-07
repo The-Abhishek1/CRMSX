@@ -9,11 +9,7 @@ function Header(props) {
   return (
     <>
       {sideShow ? (
-        <Sidebar
-          themeSide={props.themeSide}
-          themeSettings={props.themeSettings}
-          theme={props.theme}
-        />
+        <Sidebar theme1={props.theme1} themeSide={props.themeSide} />
       ) : null}
       <header className={head.header} style={props.themeHead}>
         <Menu

@@ -71,19 +71,13 @@ function Signin(props) {
     } else {
       error.password = "";
     }
-    //Usertype Validation
-    if (!values.usertype) {
-      error.usertype = "Please Select account type!!";
-    } else {
-      error.usertype = "";
-    }
     return error;
   };
 
   return (
     <>
       {show ? (
-        <div className={s.message} style={props.theme}>
+        <div className={s.message} style={props.theme1}>
           <h3 className={s.h3}>Failure</h3>
           <Close className={s.success} onClick={handleHide}></Close>
           <span className={s.span}>Incorrect Email or Password</span>
@@ -94,36 +88,9 @@ function Signin(props) {
         action=""
         onSubmit={handleSubmit}
         className={s.form}
-        style={props.themeSettings}
+        style={props.theme1}
       >
-        <div className={s.container} style={props.theme}>
-          <h2>Choose an account Type</h2>
-          <div className={s.user}>
-            <button
-              type="button"
-              value="police"
-              className={s.button}
-              name="usertype"
-              onClick={handleInput}
-              style={props.themeSettings}
-            >
-              Police
-            </button>
-            <h2 className={s.or}>OR</h2>
-            <button
-              type="button"
-              value="public"
-              className={s.button}
-              name="usertype"
-              onClick={handleInput}
-              style={props.themeSettings}
-            >
-              Public
-            </button>
-          </div>
-          {errors.usertype === "" ? null : (
-            <p className={s.p}>{errors.usertype}</p>
-          )}
+        <div className={s.container} style={props.theme2}>
           <h4 className={s.h4}>
             Hello, please fill out the below form to get started.
           </h4>
@@ -166,7 +133,7 @@ function Signin(props) {
             <button type="submit" className={s.but} id={s.b1}>
               Sign in
             </button>
-            <span className={s.sp}>Don't have an account?</span>
+            {/* <span className={s.sp}>Don't have an account?</span> */}
             <Link to="/signup">
               <button type="button" className={s.but} id={s.b2}>
                 Sign up

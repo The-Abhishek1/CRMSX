@@ -10,29 +10,28 @@
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  top: 45%;
+  top: 40%;
   z-index: 1;
   left: 30%;
-  border: 2px solid rgb(98, 160, 215);
-  border-radius: 7px;
-  height: 120px;
-  width: 200px;
+  border-radius: 15px;
+  height: 150px;
+  width: 250px;
 }
 .s {
   color: rgb(93, 0, 255);
-  font-size: 24px;
+  font-size: 30px;
   position: relative;
   top: 10px;
 }
 .c {
   color: rgb(93, 0, 255);
   position: relative;
-  top: 15px;
-  left: 2px;
+  top: 12px;
+  left: 4px;
 }
 .bu {
   position: absolute;
-  left: 15%;
+  left: 21%;
   top: 53%;
   width: 150px;
   height: 30px;
@@ -42,6 +41,11 @@
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
+  border: none;
+}
+.bu:hover {
+  color: rgb(64, 0, 255);
+  background-color: whitesmoke;
 }
 .h1 {
   color: red;
@@ -60,7 +64,7 @@
   height: 98.7vh;
 }
 .h1 {
-  color: red;
+  color: rgb(27, 19, 244);
   position: relative;
   top: 60px;
   text-align: center;
@@ -214,9 +218,8 @@
     height: 95%;
   }
   .but {
-    transform: translate(0, 82.7vh);
+    transform: translateX(80%);
   }
-
   .button {
     width: 100px;
   }

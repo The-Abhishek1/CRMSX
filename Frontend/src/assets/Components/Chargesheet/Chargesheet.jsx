@@ -56,13 +56,17 @@ function Chargesheet(props) {
   return (
     <>
       {success ? (
-        <div className={cs.success} style={props.theme}>
-          <h1 className={cs.s} style={props.themeSettings}>
+        <div className={cs.success} style={props.theme1}>
+          <h1 className={cs.s} style={props.theme1}>
             Success
           </h1>
-          <Check className={cs.c} style={props.themeSettings}></Check>
+          <Check
+            className={cs.c}
+            style={props.theme1}
+            sx={{ fontSize: 30 }}
+          ></Check>
           <button type="button" onClick={handleClick} className={cs.bu}>
-            OK
+            Continue
           </button>
         </div>
       ) : null}
@@ -71,20 +75,20 @@ function Chargesheet(props) {
           action=""
           onSubmit={handleSubmit}
           className={cs.form}
-          style={props.themeSettings}
+          style={props.theme1}
         >
           <h1 className={cs.h1}>Chargesheet</h1>
           <h5 className={cs.h5}>(Under Section 173 CR. P.C.)</h5>
           <div className={cs.container}>
-            <div className={cs.item} style={props.theme}>
+            <div className={cs.item} style={props.theme2}>
               <h2 className={cs.h2}>Criminal photo</h2>
               <img src={logo} alt="" className={cs.img} />
               <h4 className={cs.hu4} style={props.themeSettings}>
                 Upload picture
               </h4>
-              <input type="file" src="" alt="" className={cs.imin} />
+              <input type="image" src="" alt="" className={cs.imin} />
             </div>
-            <div className={cs.item} style={props.theme}>
+            <div className={cs.item} style={props.theme2}>
               <h3 className={cs.h3}>Incident Info</h3>
               <label htmlFor="complaint_no" className={cs.label}>
                 Complaint No:
@@ -170,7 +174,7 @@ function Chargesheet(props) {
                 required
               />
             </div>
-            <div className={cs.item} style={props.theme}>
+            <div className={cs.item} style={props.theme2}>
               <h3 className={cs.h3}>Complainant Details</h3>
               <label htmlFor="complainant_name" className={cs.label}>
                 Complainant Name:{" "}
@@ -198,7 +202,7 @@ function Chargesheet(props) {
                 required
               ></textarea>
             </div>
-            <div className={cs.item} style={props.theme}>
+            <div className={cs.item} style={props.theme2}>
               <h3 className={cs.h3}>Accuse Details</h3>
               <label htmlFor="accuse_name" className={cs.label}>
                 Name:{" "}
@@ -226,7 +230,7 @@ function Chargesheet(props) {
                 required
               ></textarea>
             </div>
-            <div className={cs.item} style={props.theme}>
+            <div className={cs.item} style={props.theme2}>
               <h3 className={cs.h3}>Summary of the Offense</h3>
               <textarea
                 name="incident_summary"
@@ -238,7 +242,7 @@ function Chargesheet(props) {
                 required
               ></textarea>
             </div>
-            <div className={cs.item} style={props.theme}>
+            <div className={cs.item} style={props.theme2}>
               <h3 className={cs.h3}>Evidence Info</h3>
               <textarea
                 name="evidence_info"
@@ -257,7 +261,7 @@ function Chargesheet(props) {
                 onChange={handleInput}
               />
             </div>
-            <div className={cs.item} style={props.theme}>
+            <div className={cs.item} style={props.theme2}>
               <h3 className={cs.h3}>Witness Info</h3>
               <label htmlFor="witness_name" className={cs.label}>
                 Name:{" "}
@@ -297,7 +301,7 @@ function Chargesheet(props) {
                 required
               ></textarea>
             </div>
-            <div className={cs.item} style={props.theme}>
+            <div className={cs.item} style={props.theme2}>
               <h3 className={cs.h3}>Investing officer</h3>
               <label htmlFor="officer_name" className={cs.label}>
                 Name:{" "}
@@ -336,7 +340,7 @@ function Chargesheet(props) {
               />
               <br />
             </div>
-            <div className={cs.item} style={props.theme}>
+            <div className={cs.item} style={props.theme2}>
               <h3 className={cs.h3}>Charges Details</h3>
               <label htmlFor="charge_details" className={cs.label}>
                 [List the specific charges or offences filed against the
@@ -353,7 +357,7 @@ function Chargesheet(props) {
                 required
               ></textarea>
             </div>
-            <div className={cs.item} style={props.theme}>
+            <div className={cs.item} style={props.theme2}>
               <h3 className={cs.h3}>Recommendation Details</h3>
               <label htmlFor="recommendation_details" className={cs.label}>
                 [Include the investigation's recommendation, such as whether the

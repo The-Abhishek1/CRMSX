@@ -3,9 +3,10 @@
   top: 15px;
   z-index: 1;
   right: 40px;
-  padding: 1pc;
+  padding: 1px;
   cursor: pointer;
   border-radius: 25px;
+  z-index: 2;
 }
 .dark {
   position: absolute;
@@ -15,4 +16,5 @@
   padding: 1px;
   border-radius: 25px;
   cursor: pointer;
+  z-index: 2;
 }

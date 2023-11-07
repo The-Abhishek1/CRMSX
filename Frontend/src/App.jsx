@@ -20,26 +20,39 @@ import a from "./App.module.css";
 
 function App() {
   const [dark, setDark] = useState(false);
-  const theme = {
-    backgroundColor: dark ? "rgb(20,20,20)" : "",
+  const themeHead = {
+    backgroundColor: dark ? "#0a0a0a" : "",
     color: dark ? "white" : "",
-    border: dark ? "1px solid white" : "",
+    borderBottom: dark ? "1px solid white" : "",
+  };
+  const theme1 = {
+    backgroundColor: dark ? "#09090b" : "",
+    color: dark ? "white" : "",
+  };
+  const theme2 = {
+    backgroundColor: dark ? "#18181b" : "",
+    color: dark ? "white" : "",
+  };
+  const theme_2 = {
+    backgroundColor: dark ? "#18181b" : "",
+    color: dark ? "white" : "",
+    boxShadow: dark ? " 1px 1.5px 3px #525252 " : "",
+  };
+  const theme3 = {
+    backgroundColor: dark ? "#262626" : "",
+    color: dark ? "white" : "",
   };
   const themeSettings = {
     backgroundColor: dark ? "rgb(20,20,20)" : "",
     color: dark ? "white" : "",
   };
   const themeSide = {
-    backgroundColor: dark ? "rgb(20,20,20)" : "",
+    backgroundColor: dark ? "#18181b" : "",
     color: dark ? "white" : "",
     borderBottom: dark ? "1px solid white" : "",
     borderRight: dark ? "1px solid white" : "",
   };
-  const themeHead = {
-    backgroundColor: dark ? "rgb(17,17,17)" : "",
-    color: dark ? "white" : "",
-    // borderBottom: dark ? "1px solid white" : "",
-  };
+
   const lightMode = () => {
     setDark(false);
   };
@@ -51,133 +64,114 @@ function App() {
       <LightMode
         className={a.light}
         onClick={lightMode}
-        style={themeHead}
+        style={theme1}
         sx={{ fontSize: 27 }}
       />
       <DarkMode
         className={a.dark}
         onClick={darkMode}
-        style={themeHead}
+        style={theme1}
         sx={{ fontSize: 27 }}
       />
       <Routes>
+        <Route path="/" element={<Welcome theme1={theme1} />} />
         <Route
-          path="/"
-          element={
-            <Welcome
-              theme={theme}
-              themeSide={themeSide}
-              themeSettings={themeSettings}
-            />
-          }
+          path="/signin"
+          element={<Signin theme1={theme1} theme2={theme2} theme3={theme3} />}
+        />
+        <Route
+          path="/signup"
+          element={<Signup theme1={theme1} theme2={theme2} />}
         />
         <Route
           path="/dashboard"
           element={[
             <Header
-              theme={theme}
-              themeSide={themeSide}
-              themeSettings={themeSettings}
+              theme1={theme1}
               themeHead={themeHead}
+              themeSide={themeSide}
             />,
-            <Dashboard theme={theme} themeSettings={themeSettings} />,
+            <Dashboard theme1={theme1} theme2={theme2} theme_2={theme_2} />,
           ]}
         />
         <Route
           path="/newfir"
           element={[
             <Header
-              theme={theme}
-              themeSide={themeSide}
-              themeSettings={themeSettings}
+              theme1={theme1}
               themeHead={themeHead}
+              themeSide={themeSide}
             />,
-            <Complaintform theme={theme} themeSettings={themeSettings} />,
+            <Complaintform theme1={theme1} theme2={theme2} />,
           ]}
         />
         <Route
           path="/chargesheet"
           element={[
             <Header
-              theme={theme}
-              themeSide={themeSide}
-              themeSettings={themeSettings}
+              theme1={theme1}
               themeHead={themeHead}
+              themeSide={themeSide}
             />,
-            <Chargesheet theme={theme} themeSettings={themeSettings} />,
+            <Chargesheet theme1={theme1} theme2={theme2} />,
+          ]}
+        />
+        <Route
+          path="/officers"
+          element={[
+            <Header
+              theme1={theme1}
+              themeHead={themeHead}
+              themeSide={themeSide}
+            />,
+            <Officers theme1={theme1} theme2={theme2} theme3={theme3} />,
           ]}
         />
         <Route
           path="/news"
           element={[
             <Header
-              theme={theme}
-              themeSide={themeSide}
-              themeSettings={themeSettings}
+              theme1={theme1}
               themeHead={themeHead}
+              themeSide={themeSide}
             />,
-            <NewsList theme={theme} themeSettings={themeSettings} />,
+            <NewsList theme1={theme1} themeSettings={themeSettings} />,
           ]}
         />
         <Route
           path="/profile"
           element={[
             <Header
-              theme={theme}
-              themeSide={themeSide}
-              themeSettings={themeSettings}
+              theme1={theme1}
               themeHead={themeHead}
-            />,
-            <Profile
-              theme={theme}
               themeSide={themeSide}
-              themeSettings={themeSettings}
             />,
+            <Profile theme1={theme1} theme2={theme2} theme3={theme3} />,
           ]}
         />
         <Route
           path="/settings"
           element={[
             <Header
-              theme={theme}
-              themeSide={themeSide}
-              themeSettings={themeSettings}
+              theme1={theme1}
               themeHead={themeHead}
+              themeSide={themeSide}
             />,
-            <Settings theme={theme} themeSettings={themeSettings} />,
+            <Settings theme1={theme1} theme2={theme2} theme3={theme3} />,
           ]}
         />
-        <Route
-          path="/signin"
-          element={
-            <Signin
-              theme={theme}
-              themeSide={themeSide}
-              themeSettings={themeSettings}
-            />
-          }
-        />
-        <Route
-          path="/signup"
-          element={
-            <Signup
-              theme={theme}
-              themeSide={themeSide}
-              themeSettings={themeSettings}
-            />
-          }
-        />
+
         <Route
           path="/about"
           element={[
             <Header
-              theme={theme}
+              theme1={theme1}
               themeSide={themeSide}
               themeSettings={themeSettings}
               themeHead={themeHead}
             />,
             <About
-              theme={theme}
+              theme1={theme1}
               themeSide={themeSide}
               themeSettings={themeSettings}
             />,
@@ -188,13 +182,13 @@ function App() {
           path="/contact"
           element={[
             <Header
-              theme={theme}
+              theme1={theme1}
               themeSide={themeSide}
               themeSettings={themeSettings}
               themeHead={themeHead}
             />,
             <Contact
-              theme={theme}
+              theme1={theme1}
               themeSide={themeSide}
               themeSettings={themeSettings}
             />,
@@ -204,24 +198,12 @@ function App() {
           path="/feedback"
           element={[
             <Header
-              theme={theme}
+              theme1={theme1}
               themeSide={themeSide}
               themeSettings={themeSettings}
               themeHead={themeHead}
             />,
-            <Feedback theme={theme} themeSettings={themeSettings} />,
-          ]}
-        />
-        <Route
-          path="/officers"
-          element={[
-            <Header
-              theme={theme}
-              themeSide={themeSide}
-              themeSettings={themeSettings}
-              themeHead={themeHead}
-            />,
-            <Officers theme={theme} themeSettings={themeSettings} />,
+            <Feedback theme1={theme1} themeSettings={themeSettings} />,
           ]}
         />
       </Routes>

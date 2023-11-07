@@ -34,15 +34,15 @@
   top: 45%;
   z-index: 1;
   left: 30%;
-  border: 2px solid rgb(98, 160, 215);
   border-radius: 7px;
-  height: 120px;
-  width: 200px;
+  height: 150px;
+  width: 250px;
+  border-radius: 25px;
 }
 
 .s {
   color: rgb(93, 0, 255);
-  font-size: 24px;
+  font-size: 29px;
   position: relative;
   top: 10px;
 }
@@ -50,13 +50,13 @@
 .c {
   color: rgb(93, 0, 255);
   position: relative;
-  top: 15px;
+  top: 14px;
   left: 2px;
 }
 
 .bu {
   position: absolute;
-  left: 15%;
+  left: 20%;
   top: 53%;
   width: 150px;
   height: 30px;
@@ -66,9 +66,15 @@
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
+  border-radius: 10px;
+  border: none;
+}
+.bu:hover {
+  color: rgb(64, 0, 255);
+  background-color: whitesmoke;
 }
 .h1 {
-  color: red;
+  color: rgb(27, 19, 244);
   position: relative;
   top: 70px;
   text-align: center;
@@ -222,7 +228,7 @@
   }
 
   .but {
-    transform: translate(0, 84vh);
+    transform: translate(0, 44vh);
   }
 
   .button {
