@@ -82,7 +82,7 @@ function Chargesheet(props) {
               <h4 className={cs.hu4} style={props.themeSettings}>
                 Upload picture
               </h4>
-              <input type="image" src="" alt="" className={cs.imin} />
+              <input type="file" src="" alt="" className={cs.imin} />
             </div>
             <div className={cs.item} style={props.theme}>
               <h3 className={cs.h3}>Incident Info</h3>

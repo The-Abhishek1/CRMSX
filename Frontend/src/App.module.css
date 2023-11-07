@@ -1,16 +1,18 @@
-.light{
-  position:absolute;
+.light {
+  position: absolute;
   top: 15px;
   z-index: 1;
   right: 40px;
-  padding: 1px;
+  padding: 1pc;
   cursor: pointer;
+  border-radius: 25px;
 }
-.dark{
-  position:absolute;
+.dark {
+  position: absolute;
   top: 15px;
   z-index: 1;
   right: 10px;
   padding: 1px;
+  border-radius: 25px;
   cursor: pointer;
 }

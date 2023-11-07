@@ -21,24 +21,24 @@ import a from "./App.module.css";
 function App() {
   const [dark, setDark] = useState(false);
   const theme = {
-    backgroundColor: dark ? "black" : "",
+    backgroundColor: dark ? "rgb(20,20,20)" : "",
     color: dark ? "white" : "",
     border: dark ? "1px solid white" : "",
   };
   const themeSettings = {
-    backgroundColor: dark ? "black" : "",
+    backgroundColor: dark ? "rgb(20,20,20)" : "",
     color: dark ? "white" : "",
   };
   const themeSide = {
-    backgroundColor: dark ? "black" : "",
+    backgroundColor: dark ? "rgb(20,20,20)" : "",
     color: dark ? "white" : "",
     borderBottom: dark ? "1px solid white" : "",
     borderRight: dark ? "1px solid white" : "",
   };
   const themeHead = {
-    backgroundColor: dark ? "black" : "",
+    backgroundColor: dark ? "rgb(17,17,17)" : "",
     color: dark ? "white" : "",
-    borderBottom: dark ? "1px solid white" : "",
+    // borderBottom: dark ? "1px solid white" : "",
   };
   const lightMode = () => {
     setDark(false);
@@ -51,13 +51,13 @@ function App() {
       <LightMode
         className={a.light}
         onClick={lightMode}
-        style={themeSettings}
+        style={themeHead}
         sx={{ fontSize: 27 }}
       />
       <DarkMode
         className={a.dark}
         onClick={darkMode}
-        style={themeSettings}
+        style={themeHead}
         sx={{ fontSize: 27 }}
       />
       <Routes>

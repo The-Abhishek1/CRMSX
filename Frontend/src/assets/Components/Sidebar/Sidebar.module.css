@@ -1,11 +1,10 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
 }
 
-.logout{
+.logout {
   background-color: rgb(202, 218, 233);
   width: 300px;
   height: 200px;
@@ -13,7 +12,7 @@
   top: 250px;
   left: 21.5%;
   display: flex;
-  flex-direction: column;;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   z-index: 1;
@@ -21,18 +20,18 @@
   border-radius: 10px;
   border: 2px solid rgb(98, 160, 215);
 }
-.logout .h3l{
+.logout .h3l {
   text-align: center;
   color: rgb(0, 0, 0);
-  margin-bottom: 10px; 
+  margin-bottom: 10px;
   font-size: 17px;
 }
-.logout .b{
+.logout .b {
   position: relative;
   top: 15px;
   width: 70%;
   padding: 5px;
-  margin:8px ;
+  margin: 8px;
   border-radius: 5px;
   text-transform: uppercase;
   font-weight: 600;
@@ -40,26 +39,26 @@
   letter-spacing: 1px;
   cursor: pointer;
 }
-.logout #b1{
-  color:rgb(26, 255, 1);
-  background-color:whitesmoke;
+.logout #b1 {
+  color: rgb(26, 255, 1);
+  background-color: whitesmoke;
   height: 30px;
 }
-.logout #b2{
+.logout #b2 {
   color: rgb(255, 12, 12);
-  background-color:whitesmoke;
+  background-color: whitesmoke;
   height: 30px;
 }
-#b1:hover{
-color: whitesmoke;
-background-color: rgb(6, 248, 58);
+#b1:hover {
+  color: whitesmoke;
+  background-color: rgb(6, 248, 58);
 }
-#b2:hover{
+#b2:hover {
   color: whitesmoke;
   background-color: red;
 }
 .aside {
-  display:flex;
+  display: flex;
   position: fixed;
   flex-direction: column;
   z-index: 1;
@@ -68,7 +67,6 @@ background-color: rgb(6, 248, 58);
   position: absolute;
   top: 0px;
   height: 100vh;
-  
 }
 
 .aside .h2 {
@@ -78,7 +76,7 @@ background-color: rgb(6, 248, 58);
   font-size: 25px;
   color: red;
 }
-.police{
+.police {
   position: absolute;
   top: 15px;
   right: 45px;
@@ -86,7 +84,6 @@ background-color: rgb(6, 248, 58);
 }
 
 .aside .close {
-  
   position: absolute;
   top: 2px;
   right: 2px;
@@ -97,7 +94,7 @@ background-color: rgb(6, 248, 58);
   cursor: pointer;
 }
 
-.aside .linkitems{
+.aside .linkitems {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -119,8 +116,8 @@ background-color: rgb(6, 248, 58);
   border-bottom: 1px solid rgb(46, 46, 46);
   border-right: 1px solid rgb(46, 46, 46);
 }
-.aside .linkitems .link:hover,.g:hover{
-
+.aside .linkitems .link:hover,
+.g:hover {
   background: #000000;
   color: whitesmoke;
 }
@@ -142,35 +139,34 @@ aside .linkitems .link .h3 {
 
 .aside .linkitems #last {
   position: relative;
-  top: 35%;
-} 
+  top: 36%;
+}
 
-.gr{
+.gr {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   position: absolute;
   top: 107px;
   left: 135px;
-  height: 383px;
+  height: 382px;
 }
 
-.g{
+.g {
   font-size: 17px;
   color: rgb(0, 0, 0);
 }
 
-.glast{
+.glast {
   font-size: 17px;
   position: absolute;
-  bottom: 17px;
+  bottom: 19px;
   left: 135px;
   color: rgb(0, 0, 0);
 }
 
-@media screen and (min-width:1200px) {
-  .logout{
+@media screen and (min-width: 1200px) {
+  .logout {
     left: 37.8%;
   }
-  
 }

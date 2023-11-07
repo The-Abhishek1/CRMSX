@@ -4,9 +4,17 @@ import logo from "../Images/ab.jpg";
 import { Edit } from "@mui/icons-material";
 
 export default function Profile(props) {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  };
   return (
     <>
-      <form action="" style={props.themeSettings} className={p.form}>
+      <form
+        action=""
+        style={props.themeSettings}
+        className={p.form}
+        onSubmit={handleSubmit}
+      >
         <div className={p.container} style={props.theme}>
           <h2 className={p.h2}>My Profile</h2>
           <img className={p.img} src={logo} />
