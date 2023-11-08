@@ -17,6 +17,7 @@
   font-size: 27px;
   text-align: center;
   margin: 20px 10px 10px 10px;
+  color: blue;
 }
 .container {
   display: flex;
@@ -31,7 +32,6 @@
   width: 100%;
 }
 .container .item {
-  background-color: rgb(212, 223, 234);
   position: relative;
   padding: 20px 20px 20px 25px;
   width: 80%;
@@ -40,14 +40,10 @@
   display: flex;
   align-items: center;
 }
-.container .item:hover {
-  margin-left: 2px;
-  background-color: rgb(204, 222, 240);
-}
 .h2 {
   text-align: start;
   text-transform: uppercase;
-
+  font-size: 20px;
   position: relative;
   left: 7%;
 }
@@ -58,11 +54,7 @@
   font-style: italic;
   position: absolute;
   right: 45px;
-  color: rgb(63, 93, 117);
   padding: 5px;
-}
-.icon {
-  color: rgb(255, 123, 0);
 }
 
 @media screen and (min-width: 1200px) {

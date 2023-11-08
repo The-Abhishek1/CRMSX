@@ -6,7 +6,6 @@
   position: absolute;
   z-index: 1;
   top: 0;
-  background-color: rgb(212, 223, 234);
   height: 60px;
   width: 100%;
 }
@@ -24,7 +23,7 @@
   top: -5px;
   left: 75px;
   width: 55%;
-  border-radius: 7px;
+  border-radius: 15px;
   height: 27px;
   font-size: 12px;
   text-align: center;

@@ -23,16 +23,6 @@ function Header(props) {
           placeholder="Search or type complaint number"
           className={head.search}
         />
-        {/* <LightModeSharp
-          sx={{ fontSize: 30 }}
-          className={head.light}
-          onClick={(props.dark = false)}
-        ></LightModeSharp>
-        <DarkModeSharp
-          sx={{ fontSize: 30 }}
-          className={head.dark}
-          onClick={(props.dark = true)}
-        ></DarkModeSharp> */}
       </header>
     </>
   );
