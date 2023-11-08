@@ -91,9 +91,7 @@ function Signin(props) {
         style={props.theme1}
       >
         <div className={s.container} style={props.theme2}>
-          <h4 className={s.h4}>
-            Hello, please fill out the below form to get started.
-          </h4>
+          <h4 className={s.h4}>Welcome back..!</h4>
           <label htmlFor="email" className={s.label}>
             Enter your Email:
           </label>
@@ -133,7 +131,6 @@ function Signin(props) {
             <button type="submit" className={s.but} id={s.b1}>
               Sign in
             </button>
-            {/* <span className={s.sp}>Don't have an account?</span> */}
             <Link to="/signup">
               <button type="button" className={s.but} id={s.b2}>
                 Sign up

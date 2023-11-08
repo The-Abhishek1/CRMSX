@@ -10,9 +10,10 @@
   text-align: center;
   margin: 10px;
   font-size: 19px;
-  color: rgb(51, 63, 79);
+  color: red;
   position: relative;
   top: 65px;
+  text-transform: uppercase;
 }
 .container {
   display: flex;
@@ -20,7 +21,6 @@
   gap: 20px;
   align-items: center;
   justify-content: space-between;
-  background-color: rgb(212, 223, 234);
   margin: 10px 20px 20px 20px;
   padding: 20px;
   height: 84vh;
@@ -30,7 +30,7 @@
   top: 65px;
 }
 .card {
-  background-color: rgb(200, 213, 226);
+  background-color: skyblue;
   width: 80%;
   position: relative;
   left: 10%;
@@ -38,7 +38,7 @@
   border-radius: 20px;
 }
 .card:hover {
-  background-color: rgb(190, 205, 220);
+  background-color: rgb(108, 175, 202);
 }
 .img {
   border-radius: 10px;
