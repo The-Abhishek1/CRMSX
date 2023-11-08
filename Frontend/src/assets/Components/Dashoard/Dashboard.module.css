@@ -16,14 +16,14 @@
   font-weight: bolder;
   font-size: 27px;
   text-align: center;
-  margin: 20px 10px 10px 10px;
-  color: blue;
+  margin: 30px 10px 10px 10px;
+  color: red;
 }
 .container {
   display: flex;
   flex-direction: row;
   position: absolute;
-  top: 50px;
+  top: 60px;
   row-gap: 20px;
   padding: 20px 0 20px 0;
   justify-content: center;
@@ -39,6 +39,10 @@
   height: 75px;
   display: flex;
   align-items: center;
+  background-color: rgb(171, 226, 247);
+}
+.container .item:hover {
+  background-color: skyblue;
 }
 .h2 {
   text-align: start;

@@ -16,7 +16,7 @@
   position: absolute;
   top: 15%;
   left: 15%;
-  background: rgb(238, 245, 251);
+  background-color: rgb(171, 226, 247);
   color: black;
   padding: 20px;
   border-radius: 50px;
@@ -50,7 +50,7 @@
 .item {
   display: flex;
   flex-direction: column;
-  background-color: rgb(221, 235, 247);
+  background-color: skyblue;
   position: relative;
   width: 280px;
   top: 5px;

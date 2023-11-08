@@ -107,7 +107,7 @@ function Feedback(props) {
               <textarea
                 name="message"
                 id=""
-                cols="60"
+                cols="53"
                 rows="10"
                 className={f.textarea}
               ></textarea>
@@ -176,7 +176,7 @@ function Feedback(props) {
               <textarea
                 name="comments"
                 id=""
-                cols="60"
+                cols="53"
                 rows="10"
                 className={f.textarea}
               ></textarea>

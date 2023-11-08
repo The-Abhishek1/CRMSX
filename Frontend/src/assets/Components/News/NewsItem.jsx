@@ -7,15 +7,16 @@ export default function NewsItem({
   description,
   url,
   urlToImage,
-  themeSettings,
-  theme,
+  theme1,
+  theme2,
+  theme3,
 }) {
   return (
     <>
-      <div className={n.newsapp} style={themeSettings}>
-        <div className={n.newsitem} style={theme}>
-          <h3 className={n.h3} style={themeSettings}>
-            <a className={n.a} href={url} style={themeSettings}>
+      <div className={n.newsapp} style={theme1}>
+        <div className={n.newsitem} style={theme2}>
+          <h3 className={n.h3} style={theme2}>
+            <a className={n.a} href={url} style={theme2}>
               {title}
             </a>
           </h3>

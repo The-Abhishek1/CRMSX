@@ -98,9 +98,9 @@ export default function Settings(props) {
             </Link>
           </div>
           <div className={set.icons1}>
-            <InfoSharp className={set.i1} />
-            <ContactPhone className={set.i1} />
-            <Star className={set.i1} />
+            <InfoSharp className={set.i1} style={props.themeIcons} />
+            <ContactPhone className={set.i1} style={props.themeIcons} />
+            <Star className={set.i1} style={props.themeIcons} />
           </div>
           <div className={set.items2} style={props.theme3}>
             <h3 className={set.h3}>Login</h3>
@@ -116,8 +116,8 @@ export default function Settings(props) {
             </Link>
           </div>
           <div className={set.icons2}>
-            <LogoutSharp className={set.i2} />
-            <DeleteForever className={set.i2} />
+            <LogoutSharp className={set.i2} style={props.themeIcons} />
+            <DeleteForever className={set.i2} style={props.themeIcons} />
           </div>
         </div>
       </div>

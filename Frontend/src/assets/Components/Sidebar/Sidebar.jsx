@@ -69,9 +69,8 @@ function Sidebar(props) {
 
       {showSide ? (
         <aside className={Side.aside} style={props.theme1}>
-          <h2 className={Side.h2}>CRMS</h2>
-          <LocalPolice className={Side.police} />
-          <Close className={Side.close} onClick={() => setSide(false)}></Close>
+          {/* <h2 className={Side.h2}>CRMS</h2>
+          <LocalPolice className={Side.police} /> */}
           <div className={Side.linkitems}>
             <Link
               to="/dashboard"
@@ -150,32 +149,6 @@ function Sidebar(props) {
               <h3 className={Side.h3}>Logout</h3>
             </Link>
           </div>
-          {/* <div className={Side.gr}>
-            <h1 className={Side.g} style={props.themeSettings}>
-              {great}
-            </h1>
-            <h1 className={Side.g} style={props.themeSettings}>
-              {great}
-            </h1>
-            <h1 className={Side.g} style={props.themeSettings}>
-              {great}
-            </h1>
-            <h1 className={Side.g} style={props.themeSettings}>
-              {great}
-            </h1>
-            <h1 className={Side.g} style={props.themeSettings}>
-              {great}
-            </h1>
-            <h1 className={Side.g} style={props.themeSettings}>
-              {great}
-            </h1>
-            <h1 className={Side.g} style={props.themeSettings}>
-              {great}
-            </h1>
-          </div>
-          <h1 className={Side.glast} style={props.themeSettings}>
-            {great}
-          </h1> */}
         </aside>
       ) : null}
     </>

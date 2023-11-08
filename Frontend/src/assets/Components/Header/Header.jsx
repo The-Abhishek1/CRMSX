@@ -14,7 +14,7 @@ function Header(props) {
       <header className={head.header} style={props.themeHead}>
         <Menu
           theme={props.theme}
-          sx={{ fontSize: 40 }}
+          sx={{ fontSize: 36 }}
           className={head.menu}
           onClick={() => setSide(!sideShow)}
         ></Menu>

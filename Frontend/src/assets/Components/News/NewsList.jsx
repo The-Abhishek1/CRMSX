@@ -24,8 +24,9 @@ export default function NewsList(props) {
             description={article.description}
             url={article.url}
             urlToImage={article.urlToImage}
-            theme={props.theme}
-            themeSettings={props.themeSettings}
+            theme1={props.theme1}
+            theme2={props.theme2}
+            theme3={props.theme3}
           ></NewsItem>
         );
       })}

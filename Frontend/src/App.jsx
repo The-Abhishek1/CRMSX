@@ -22,16 +22,16 @@ function App() {
   const [dark, setDark] = useState(false);
   const [light, setLight] = useState(true);
   const themeHead = {
-    backgroundColor: dark ? "#0a0a0a" : "skyblue",
+    backgroundColor: dark ? "#0a0a0a" : "",
     color: dark ? "white" : "white",
     borderBottom: dark ? "1px solid white" : "",
   };
   const theme1 = {
     backgroundColor: dark ? "#09090b" : "",
-    color: dark ? "white" : "white",
+    color: dark ? "white" : "",
   };
   const theme2 = {
-    backgroundColor: dark ? "#18181b" : "skyblue",
+    backgroundColor: dark ? "#18181b" : "",
     color: dark ? "white" : "white",
   };
   const theme_2 = {
@@ -44,7 +44,7 @@ function App() {
   };
 
   const theme3 = {
-    backgroundColor: dark ? "#262626" : "#fafaf9",
+    backgroundColor: dark ? "#262626" : "",
     color: dark ? "white" : "",
   };
   const themeSide = {
@@ -66,7 +66,7 @@ function App() {
     color: dark ? "white" : "",
   };
   const darkTheme = {
-    color: light ? "white" : "",
+    color: light ? " rgb(0, 183, 255)" : "",
   };
   return (
     <>
@@ -154,7 +154,7 @@ function App() {
               themeHead={themeHead}
               themeSide={themeSide}
             />,
-            <NewsList theme1={theme1} />,
+            <NewsList theme1={theme1} theme2={theme2} theme3={theme3} />,
           ]}
         />
         <Route
@@ -176,7 +176,12 @@ function App() {
               themeHead={themeHead}
               themeSide={themeSide}
             />,
-            <Settings theme1={theme1} theme2={theme2} theme3={theme3} />,
+            <Settings
+              theme1={theme1}
+              theme2={theme2}
+              theme3={theme3}
+              themeIcons={themeIcons}
+            />,
           ]}
         />
 
@@ -188,7 +193,12 @@ function App() {
               themeHead={themeHead}
               themeSide={themeSide}
             />,
-            <About theme1={theme1} theme2={theme2} theme3={theme3} />,
+            <About
+              theme1={theme1}
+              theme2={theme2}
+              theme3={theme3}
+              themeIcons={themeIcons}
+            />,
           ]}
         />
         <Route path="/sample" element={<Sample />} />

@@ -8,6 +8,7 @@
   top: 0;
   height: 60px;
   width: 100%;
+  background-color: rgb(151, 209, 232);
 }
 
 .menu {
@@ -20,7 +21,7 @@
 
 .search {
   position: relative;
-  top: -5px;
+  top: -2px;
   left: 75px;
   width: 55%;
   border-radius: 15px;
@@ -30,25 +31,6 @@
   font-style: italic;
   outline: none;
   border: none;
-  cursor: pointer;
-}
-.light {
-  float: right;
-  position: relative;
-  top: 14px;
-  left: -50px;
-  border-radius: 5px;
-  padding: 2px;
-  cursor: pointer;
-}
-
-.dark {
-  float: right;
-  position: relative;
-  top: 14px;
-  border-radius: 5px;
-  left: 20px;
-  padding: 2px;
   cursor: pointer;
 }
 

@@ -64,7 +64,7 @@
   height: 98.7vh;
 }
 .h1 {
-  color: rgb(27, 19, 244);
+  color: red;
   position: relative;
   top: 60px;
   text-align: center;
@@ -89,7 +89,7 @@
   margin: 10px;
 }
 .container .item {
-  background-color: rgb(212, 223, 234);
+  background-color: rgb(171, 226, 247);
   position: relative;
   padding: 20px 20px 20px 25px;
   width: 80%;
@@ -98,7 +98,7 @@
   flex-direction: column;
 }
 .container .item:hover {
-  background-color: rgb(204, 222, 240);
+  background-color: skyblue;
 }
 #itype {
   margin: 20px 0 0 0;

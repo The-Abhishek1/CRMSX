@@ -5,9 +5,9 @@
 }
 
 .logout {
-  background-color: rgb(202, 218, 233);
+  background-color: rgb(134, 196, 221);
   width: 300px;
-  height: 200px;
+  height: 150px;
   position: absolute;
   top: 250px;
   left: 21.5%;
@@ -16,24 +16,23 @@
   justify-content: center;
   align-items: center;
   z-index: 1;
-  padding: 10px;
-  border-radius: 10px;
+  padding: 30px 10px 20px 10px;
+  border-radius: 30px;
+  border: 1px solid rgb(203, 203, 203);
 }
 .logout .h3l {
   text-align: center;
   color: rgb(0, 0, 0);
-  margin-bottom: 10px;
+  margin-bottom: 6px;
   font-size: 17px;
 }
 .logout .b {
   position: relative;
-  top: 15px;
-  width: 70%;
-  padding: 5px;
-  margin: 8px;
-  border-radius: 5px;
+  width: 40%;
+  border-radius: 10px;
   text-transform: uppercase;
   font-weight: 600;
+  height: 30px;
   border: none;
   letter-spacing: 1px;
   cursor: pointer;
@@ -41,12 +40,15 @@
 .logout #b1 {
   color: rgb(26, 255, 1);
   background-color: whitesmoke;
-  height: 30px;
+  top: 20px;
+  left: -65px;
 }
 .logout #b2 {
   color: rgb(255, 12, 12);
   background-color: whitesmoke;
-  height: 30px;
+  position: relative;
+  top: -10px;
+  left: 65px;
 }
 #b1:hover {
   color: whitesmoke;
@@ -61,36 +63,14 @@
   position: fixed;
   flex-direction: column;
   z-index: 2;
-  background-color: rgb(212, 223, 234);
-  width: 160px;
+  width: 140px;
   position: absolute;
-  top: 8.2vh;
-  height: 91.8vh;
-}
-
-.aside .h2 {
-  font-weight: bold;
-  font-style: italic;
-  margin: 12px 0 0 15px;
-  font-size: 25px;
-  color: red;
-}
-.police {
-  position: absolute;
-  top: 15px;
-  right: 45px;
-  color: red;
-}
-
-.aside .close {
-  position: absolute;
-  top: 2px;
-  right: 2px;
-  font-size: 28px;
-  background-color: rgb(255, 0, 0);
-  color: rgb(255, 255, 255);
-  border: none;
-  cursor: pointer;
+  top: 15vh;
+  height: 75vh;
+  background-color: rgb(158, 223, 249);
+  border-top-right-radius: 60px;
+  border-bottom-right-radius: 60px;
+  border: 1px solid rgb(121, 119, 119);
 }
 
 .aside .linkitems {
@@ -99,7 +79,7 @@
   justify-content: flex-start;
   align-items: flex-start;
   position: relative;
-  top: 2%;
+  top: 5%;
   gap: 10px;
   padding: 7px;
 }
@@ -107,45 +87,36 @@
 .aside .linkitems .link {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   text-decoration: none;
   width: 100%;
   height: 40px;
   color: #181818;
   margin-top: 10px;
-  border-bottom: 1px solid rgb(46, 46, 46);
-  border-right: 1px solid rgb(46, 46, 46);
+  padding: 5px;
+  background-color: skyblue;
+  border-radius: 10px;
+  color: white;
 }
-.aside .linkitems .link:hover,
-.g:hover {
-  background: #000000;
-  color: whitesmoke;
-}
-.aside .link .item {
-  font-size: 30px;
-  position: relative;
-  top: 10px;
-  left: 3px;
+.aside .linkitems .link:hover {
+  border-radius: 10px;
+  background-color: rgb(146, 209, 234);
 }
 
 aside .linkitems .link .h3 {
   font-size: 16px;
-  position: relative;
-  top: -15px;
-  margin-left: 10px;
+  margin: -23px 0 0 18px;
+  display: inline;
   text-align: center;
   font-style: italic;
 }
 
 .aside .linkitems #last {
   position: relative;
-  top: 28%;
 }
 
 @media screen and (min-width: 1200px) {
   .logout {
     left: 37.8%;
-  }
-  .aside .linkitems #last {
-    position: relative;
   }
 }
