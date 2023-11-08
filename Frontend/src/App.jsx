@@ -166,15 +166,10 @@ function App() {
           element={[
             <Header
               theme1={theme1}
-              themeSide={themeSide}
-              themeSettings={themeSettings}
               themeHead={themeHead}
-            />,
-            <About
-              theme1={theme1}
               themeSide={themeSide}
-              themeSettings={themeSettings}
             />,
+            <About theme1={theme1} theme2={theme2} theme3={theme3} />,
           ]}
         />
         <Route path="/sample" element={<Sample />} />
@@ -183,15 +178,10 @@ function App() {
           element={[
             <Header
               theme1={theme1}
-              themeSide={themeSide}
-              themeSettings={themeSettings}
               themeHead={themeHead}
-            />,
-            <Contact
-              theme1={theme1}
               themeSide={themeSide}
-              themeSettings={themeSettings}
             />,
+            <Contact theme1={theme1} theme2={theme2} theme3={theme3} />,
           ]}
         />
         <Route
@@ -199,11 +189,10 @@ function App() {
           element={[
             <Header
               theme1={theme1}
-              themeSide={themeSide}
-              themeSettings={themeSettings}
               themeHead={themeHead}
+              themeSide={themeSide}
             />,
-            <Feedback theme1={theme1} themeSettings={themeSettings} />,
+            <Feedback theme1={theme1} theme2={theme2} theme3={theme3} />,
           ]}
         />
       </Routes>

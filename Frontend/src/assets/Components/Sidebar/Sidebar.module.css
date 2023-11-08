@@ -71,7 +71,7 @@
 .aside .h2 {
   font-weight: bold;
   font-style: italic;
-  margin: 12px 0 0 -55px;
+  margin: 12px 0 0 15px;
   font-size: 25px;
   color: red;
 }
@@ -141,35 +141,11 @@ aside .linkitems .link .h3 {
   top: 28%;
 }
 
-/* .gr {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  position: absolute;
-  top: 12.3%;
-  left: 135px;
-  height: 382px;
-}
-
-.g {
-  font-size: 17px;
-  color: rgb(0, 0, 0);
-}
-
-.glast {
-  font-size: 17px;
-  position: absolute;
-  bottom: 25px;
-  left: 135px;
-  color: rgb(0, 0, 0);
-} */
-
 @media screen and (min-width: 1200px) {
   .logout {
     left: 37.8%;
   }
   .aside .linkitems #last {
     position: relative;
-    top: 38%;
   }
 }

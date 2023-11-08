@@ -89,7 +89,6 @@
   display: flex;
   flex-direction: column;
   background-color: rgb(212, 223, 234);
-  height: 200px;
   width: 300px;
   position: relative;
   top: 40px;
@@ -101,10 +100,9 @@
   display: flex;
   flex-direction: column;
   background-color: rgb(212, 223, 234);
-  height: 200px;
   width: 300px;
   position: relative;
-  top: 50px;
+  top: -30px;
   justify-content: flex-start;
   padding: 30px;
   border-radius: 25px;
@@ -112,22 +110,20 @@
 .h3 {
   position: relative;
   top: -10px;
-  /* color: black; */
 }
 .h4 {
-  margin: 15px 0 0 35px;
+  margin: 15px 0 0 40px;
 }
 .icons1 {
   display: flex;
   flex-direction: column;
-  height: 100px;
+  height: 120px;
   width: 40px;
   align-items: center;
-  position: absolute;
+  position: relative;
+  left: -25%;
+  top: -15.8%;
   justify-content: space-around;
-  top: 130px;
-  left: 85px;
-  /* color: rgb(135, 140, 162); */
 }
 .icons2 {
   display: flex;
@@ -135,23 +131,19 @@
   height: 70px;
   width: 40px;
   align-items: center;
-  position: absolute;
+  position: relative;
   justify-content: space-around;
-  top: 338px;
-  left: 85px;
-  /* color: rgb(130, 154, 169); */
+  left: -25%;
+  top: -22%;
+  z-index: 2;
 }
 .link {
   text-decoration: none;
 }
 @media screen and (min-width: 1200px) {
   .container {
-    width: 25%;
+    width: 28%;
     left: 35%;
-  }
-  .icons1,
-  .icons2 {
-    left: 65px;
   }
   .delete {
     width: 30%;

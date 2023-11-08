@@ -25,28 +25,28 @@ function Feedback(props) {
   return (
     <>
       {hide ? (
-        <div className={f.message} style={props.theme}>
+        <div className={f.message} style={props.theme1}>
           <h3 className={f.h3}>
             Feedback Submitted <Check className={f.check} />
           </h3>
           <button type="button" className={f.b1} onClick={handleClick}>
-            Ok
+            continue
           </button>
         </div>
       ) : null}
       {hide ? null : (
-        <div className={f.whole} style={props.themeSettings}>
+        <div className={f.whole} style={props.theme1}>
           <ArrowBack
             className={f.back}
-            style={props.theme}
+            style={props.theme1}
             onClick={handleBack}
           />
           <ArrowForward
             className={f.front}
-            style={props.theme}
+            style={props.theme1}
             onClick={handleFront}
           />
-          <div className={f.container} style={props.theme}>
+          <div className={f.container} style={props.theme2}>
             <h1 className={f.h1}>Feedback us</h1>
             <p className={f.p} id={f.p}>
               Your feedback is invaluable to us as we strive to improve our
@@ -159,18 +159,7 @@ function Feedback(props) {
                 <input type="radio" name="contact" id={f.i1} />
                 No response needed, I'm just providing feedback.
               </label>
-              <h5 className={f.ps}>
-                If you'd like a response, please select your preffered contact
-                method:
-              </h5>
-              <label htmlFor="response" className={f.cat}>
-                <input type="radio" name="response" id={f.i1} />
-                Email
-              </label>
-              <label htmlFor="response" className={f.cat}>
-                <input type="radio" name="response" id={f.i1} />
-                Phone
-              </label>
+
               <h2 className={f.h2}>Consent: </h2>
               <label htmlFor="consent" className={f.cat}>
                 <input type="checkbox" name="consent" id={f.i1} />I consent to

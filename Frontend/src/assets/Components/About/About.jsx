@@ -14,18 +14,18 @@ function About(props) {
 
   return (
     <>
-      <div className={ab.whole} style={props.themeSettings}>
+      <div className={ab.whole} style={props.theme1}>
         <ArrowBack
           className={ab.back}
           onClick={handleBack}
-          style={props.theme}
+          style={props.theme1}
         />
         <ArrowForward
           className={ab.front}
           onClick={handleFront}
-          style={props.theme}
+          style={props.theme1}
         />
-        <div className={ab.container} style={props.theme}>
+        <div className={ab.container} style={props.theme2}>
           <h2 className={ab.h2}>About the Crime Reporting Management System</h2>
           <p className={ab.p}>
             Welcome to the Crime Reporting Management System, an innovative and

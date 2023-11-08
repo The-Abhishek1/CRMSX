@@ -39,23 +39,23 @@
 }
 .back {
   position: relative;
-  top: 50px;
-  border: 1px solid black;
+  top: 35px;
+  border: 1px solid rgb(103, 103, 103);
 }
 .front {
   position: relative;
-  top: 50px;
+  top: 35px;
   float: right;
-  border: 1px solid black;
+  border: 1px solid rgb(104, 104, 104);
 }
 .container {
   display: flex;
   flex-direction: column;
   position: relative;
-  top: 50px;
+  top: 5%;
   padding: 15px;
   overflow: scroll;
-  height: 80vh;
+  height: 85vh;
   background-color: rgb(212, 223, 234);
 }
 .h1 {

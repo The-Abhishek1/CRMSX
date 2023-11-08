@@ -13,20 +13,20 @@ function Contact(props) {
   };
   return (
     <>
-      <div className={c.whole} style={props.themeSettings}>
+      <div className={c.whole} style={props.theme1}>
         <ArrowBack
           className={c.back}
           onClick={handleBack}
-          style={props.theme}
+          style={props.theme1}
         />
         <ArrowForward
           className={c.front}
           onClick={handleFront}
-          style={props.theme}
+          style={props.theme1}
         />
-        <div className={c.container} style={props.themeSettings}>
+        <div className={c.container} style={props.theme2}>
           <h2 className={c.h2}>Contact us</h2>
-          <div className={c.item1} style={props.theme}>
+          <div className={c.item1} style={props.theme3}>
             <h4 className={c.h4}>
               If you need to get in touch with us for any reason, please feel
               free to use the following contact methods:
@@ -46,7 +46,7 @@ function Contact(props) {
               </span>
             </label>
           </div>
-          <div className={c.item2} style={props.theme}>
+          <div className={c.item2} style={props.theme3}>
             <h4 className={c.h4}>
               You can also reach out to us by filling out the contact form
               below:
