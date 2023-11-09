@@ -46,6 +46,11 @@ export default function Settings(props) {
     navigate("/about");
   };
 
+  // Background blur
+  const blur = {
+    filter: "blur 1px",
+  };
+
   return (
     <>
       {logout ? (

@@ -23,7 +23,6 @@ function Sidebar(props) {
   const [showlog, setShowLog] = useState(false);
 
   const navigate = useNavigate();
-  const great = ">";
 
   const handleShow = () => {
     navigate("/");
@@ -35,9 +34,6 @@ function Sidebar(props) {
 
   const handleLog = () => {
     setShowLog(true);
-    setSide(false);
-  };
-  const hide = () => {
     setSide(false);
   };
 
@@ -67,90 +63,49 @@ function Sidebar(props) {
         </div>
       ) : null}
 
-      {showSide ? (
-        <aside className={Side.aside} style={props.theme1}>
-          {/* <h2 className={Side.h2}>CRMS</h2>
-          <LocalPolice className={Side.police} /> */}
-          <div className={Side.linkitems}>
-            <Link
-              to="/dashboard"
-              style={props.themeSide}
-              className={Side.link}
-              onClick={hide}
-            >
-              <GridView className={Side.item}></GridView>
-              <h3 className={Side.h3}>Dashboard</h3>
-            </Link>
-            <Link
-              to="/newfir"
-              style={props.themeSide}
-              className={Side.link}
-              onClick={hide}
-            >
-              <AddCircleOutlineSharp
-                className={Side.item}
-              ></AddCircleOutlineSharp>
-              <h3 className={Side.h3}>New FIR</h3>
-            </Link>
-            <Link
-              to="/chargesheet"
-              style={props.themeSide}
-              className={Side.link}
-              onClick={hide}
-            >
-              <ReceiptSharp className={Side.item}></ReceiptSharp>
-              <h3 className={Side.h3}>Chargesheet</h3>
-            </Link>
-            <Link
-              to="/officers"
-              style={props.themeSide}
-              className={Side.link}
-              onClick={hide}
-            >
-              <Groups2Sharp className={Side.item}></Groups2Sharp>
-              <h3 className={Side.h3}>Officers</h3>
-            </Link>
-            <Link
-              to="/news"
-              style={props.themeSide}
-              className={Side.link}
-              onClick={hide}
-            >
-              <Newspaper className={Side.item}></Newspaper>
-              <h3 className={Side.h3}>News</h3>
-            </Link>
-            <Link
-              to="/profile"
-              style={props.themeSide}
-              className={Side.link}
-              onClick={hide}
-            >
-              <AccountBoxSharp className={Side.item}></AccountBoxSharp>
-              <h3 className={Side.h3}>Profile</h3>
-            </Link>
-            <Link
-              to="/settings"
-              style={props.themeSide}
-              className={Side.link}
-              onClick={hide}
-            >
-              <SettingsApplications
-                className={Side.item}
-              ></SettingsApplications>
-              <h3 className={Side.h3}>Settings</h3>
-            </Link>
-            <Link
-              className={Side.link}
-              style={props.themeSide}
-              id={Side.last}
-              onClick={handleLog}
-            >
-              <Logout className={Side.item}></Logout>
-              <h3 className={Side.h3}>Logout</h3>
-            </Link>
-          </div>
-        </aside>
-      ) : null}
+      <aside className={Side.aside} style={props.theme1}>
+        <div className={Side.linkitems}>
+          <Link to="/dashboard" style={props.themeSide} className={Side.link}>
+            <GridView className={Side.item}></GridView>
+            <h3 className={Side.h3}>Dashboard</h3>
+          </Link>
+          <Link to="/newfir" style={props.themeSide} className={Side.link}>
+            <AddCircleOutlineSharp
+              className={Side.item}
+            ></AddCircleOutlineSharp>
+            <h3 className={Side.h3}>New FIR</h3>
+          </Link>
+          <Link to="/chargesheet" style={props.themeSide} className={Side.link}>
+            <ReceiptSharp className={Side.item}></ReceiptSharp>
+            <h3 className={Side.h3}>Chargesheet</h3>
+          </Link>
+          <Link to="/officers" style={props.themeSide} className={Side.link}>
+            <Groups2Sharp className={Side.item}></Groups2Sharp>
+            <h3 className={Side.h3}>Officers</h3>
+          </Link>
+          <Link to="/news" style={props.themeSide} className={Side.link}>
+            <Newspaper className={Side.item}></Newspaper>
+            <h3 className={Side.h3}>News</h3>
+          </Link>
+          <Link to="/profile" style={props.themeSide} className={Side.link}>
+            <AccountBoxSharp className={Side.item}></AccountBoxSharp>
+            <h3 className={Side.h3}>Profile</h3>
+          </Link>
+          <Link to="/settings" style={props.themeSide} className={Side.link}>
+            <SettingsApplications className={Side.item}></SettingsApplications>
+            <h3 className={Side.h3}>Settings</h3>
+          </Link>
+          <Link
+            className={Side.link}
+            style={props.themeSide}
+            id={Side.last}
+            onClick={handleLog}
+          >
+            <Logout className={Side.item}></Logout>
+            <h3 className={Side.h3}>Logout</h3>
+          </Link>
+        </div>
+      </aside>
     </>
   );
 }
