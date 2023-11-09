@@ -14,7 +14,7 @@ export default function Settings(props) {
   //Showing delete message
   const [del, setDel] = useState(false);
   const handleDelete = () => {
-    setDel(true);
+    logout ? null : setDel(true);
   };
 
   //Delete btn
@@ -32,7 +32,7 @@ export default function Settings(props) {
   //Logout message
   const [logout, setLogout] = useState(false);
   const handleLogout = () => {
-    setLogout(true);
+    del ? null : setLogout(true);
   };
   const handleLogno = () => {
     setLogout(false);
