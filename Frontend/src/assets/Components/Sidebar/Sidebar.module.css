@@ -68,9 +68,10 @@
   top: 15vh;
   height: 75vh;
   background-color: rgb(158, 223, 249);
+  /* background-color: rgb(210, 210, 210); */
   border-top-right-radius: 60px;
   border-bottom-right-radius: 60px;
-  border: 1px solid rgb(121, 119, 119);
+  border: 1px solid rgb(184, 184, 184);
 }
 
 .aside .linkitems {

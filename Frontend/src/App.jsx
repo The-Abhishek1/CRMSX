@@ -32,11 +32,11 @@ function App() {
   };
   const theme2 = {
     backgroundColor: dark ? "#18181b" : "",
-    color: dark ? "white" : "white",
+    color: dark ? "white" : "black",
   };
   const theme_2 = {
     backgroundColor: dark ? "#18181b" : "",
-    color: dark ? "white" : "",
+    color: dark ? "white" : "black",
     boxShadow: dark ? " 1px 1.5px 3px #525252 " : "",
   };
   const themeIcons = {
@@ -50,8 +50,8 @@ function App() {
   const themeSide = {
     backgroundColor: dark ? "#18181b" : "",
     color: dark ? "white" : "",
-    borderBottom: dark ? "1px solid white" : "",
-    borderRight: dark ? "1px solid white" : "",
+    borderBottom: dark ? "1px solid white" : "1px solid white",
+    borderRight: dark ? "1px solid white" : "1px solid white",
   };
 
   const lightMode = () => {
