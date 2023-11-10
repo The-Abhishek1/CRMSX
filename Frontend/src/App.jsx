@@ -1,8 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import Chargesheet from "./assets/Components/Chargesheet/Chargesheet";
 import Complaintform from "./assets/Components/Complaint/Complaintform";
-import Signin from "./assets/Components/Signin/Signin";
-import Signup from "./assets/Components/Signup/Signup";
 import Dashboard from "./assets/Components/Dashoard/Dashboard";
 import NewsList from "./assets/Components/News/newslist";
 import Header from "./assets/Components/Header/Header";
@@ -26,10 +24,16 @@ function App() {
     color: dark ? "white" : "white",
     borderBottom: dark ? "1px solid white" : "",
   };
+  const theme = {
+    backgroundColor: dark ? "black" : "",
+    border: dark ? "1px solid white" : "",
+    color: dark ? "white" : "",
+  };
   const theme1 = {
     backgroundColor: dark ? "#09090b" : "",
     color: dark ? "white" : "",
   };
+
   const theme2 = {
     backgroundColor: dark ? "#18181b" : "",
     color: dark ? "white" : "white",
@@ -66,7 +70,7 @@ function App() {
     color: dark ? "white" : "",
   };
   const darkTheme = {
-    color: light ? " rgb(0, 183, 255)" : "",
+    color: light ? " rgb(180, 180, 180)" : "",
   };
   return (
     <>
@@ -88,15 +92,7 @@ function App() {
       ) : null}
 
       <Routes>
-        <Route path="/" element={<Welcome theme1={theme1} />} />
-        <Route
-          path="/signin"
-          element={<Signin theme1={theme1} theme2={theme2} theme3={theme3} />}
-        />
-        <Route
-          path="/signup"
-          element={<Signup theme1={theme1} theme2={theme2} />}
-        />
+        <Route path="/" element={<Welcome theme1={theme1} theme={theme} />} />
         <Route
           path="/dashboard"
           element={[

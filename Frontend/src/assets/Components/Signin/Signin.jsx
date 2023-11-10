@@ -3,14 +3,13 @@ import { Close, Mail, Password, Check } from "@mui/icons-material";
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useMemo, useState } from "react";
 import axios from "axios";
+import { auth } from "../Config/Firebase";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 
 function Signin(props) {
   // For Inputs
-  const [inputs, setInputs] = useState({
-    email: "",
-    password: "",
-    usertype: "",
-  });
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   //For showing failure Message
   const [show, setShow] = useState(false);
@@ -18,61 +17,59 @@ function Signin(props) {
   const [errors, setErrors] = useState({});
   const navigate = useNavigate();
 
-  const handleInput = (event) => {
-    const { name, value } = event.target;
-    setInputs({ ...inputs, [name]: value });
-  };
+  console.log(auth?.currentUser?.email);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    setErrors(validate(inputs));
-    if (
-      errors.email === "" &&
-      errors.password === "" &&
-      errors.usertype === ""
-    ) {
-      axios
-        .post("http://localhost:8081/signin", inputs)
-        .then((res) => {
-          if (res.data === "Success") {
-            navigate("/dashboard");
-          } else {
-            setShow(true);
-          }
-        })
-        .catch((err) => console.log(err));
-    }
+
+    await createUserWithEmailAndPassword(auth, email, password)
+      .then((res) => {
+        navigate("/dashboard");
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+
+    // setErrors(validate(email, password));
+    // if (
+    //   errors.email === "" &&
+    //   errors.password === "" &&
+    //   errors.usertype === ""
+    // ) {
+    //
+    //     }
+    //     .catch((err) => console.log(err));
   };
   const handleHide = () => {
     setShow(false);
   };
 
-  const validate = (values) => {
-    let error = {};
-    const email_pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const password = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9]{8,}$/;
+  // const validate = (email, password) => {
+  //     let error = {};
+  //     const email_pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  //     const password = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9]{8,}$/;
 
-    //Email validation
-    if (!values.email) {
-      error.email = "Email should not be empty!!";
-    } else if (!email_pattern.test(values.email)) {
-      error.email = "Email is not valid!!";
-    } else {
-      error.email = "";
-    }
+  //     //Email validation
+  //     if (!email) {
+  //       error.email = "Email should not be empty!!";
+  //     } else if (!email_pattern.test(email)) {
+  //       error.email = "Email is not valid!!";
+  //     } else {
+  //       error.email = "";
+  //     }
 
-    //password validation
-    if (inputs.password === "") {
-      error.password = "Password should not be empty!!";
-    } else if (!password.test(inputs.password)) {
-      error.password = "Password is not valid!!";
-    } else if (inputs.password.length < 6) {
-      error.password = "Password must be more than 6 Characters!!";
-    } else {
-      error.password = "";
-    }
-    return error;
-  };
+  //     //password validation
+  //     if (password === "") {
+  //       error.password = "Password should not be empty!!";
+  //     } else if (!password.test(ipassword)) {
+  //       error.password = "Password is not valid!!";
+  //     } else if (password.length < 6) {
+  //       error.password = "Password must be more than 6 Characters!!";
+  //     } else {
+  //       error.password = "";
+  //     }
+  //     return error;
+  //   };
 
   return (
     <>
@@ -99,7 +96,9 @@ function Signin(props) {
             type="email"
             name="email"
             className={s.input}
-            onChange={handleInput}
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
           />
           <Mail className={s.icon}></Mail>
           {errors.email && <p className={s.p}> {errors.email}</p>}
@@ -111,7 +110,9 @@ function Signin(props) {
             type="password"
             name="password"
             className={s.input}
-            onChange={handleInput}
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
           />
           <Password className={s.icon}></Password>
           {errors.password && <p className={s.p}>{errors.password}</p>}
