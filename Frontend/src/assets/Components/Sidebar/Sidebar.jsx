@@ -1,7 +1,7 @@
 import Side from "./Sidebar.module.css";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { signin, auth } from "../Config/Firebase";
+import { signinGoogle, auth } from "../Config/Firebase";
 import { signOut } from "firebase/auth";
 
 import {

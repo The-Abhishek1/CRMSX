@@ -31,20 +31,20 @@ export default function Profile(props) {
             <input
               type="text"
               name="username"
-              value={auth.currentUser.displayName}
+              value={auth?.currentUser?.displayName}
               className={p.input}
               id=""
               readOnly
             />
             <br />
             <label htmlFor="email" className={p.label}>
-              Email:
+              Email/User ID:
             </label>
             <br />
             <input
-              type="email"
+              type="text"
               name="email"
-              value={auth.currentUser.email}
+              value={auth?.currentUser?.email || auth?.currentUser?.uid}
               className={p.input}
               id=""
               readOnly

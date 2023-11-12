@@ -3,41 +3,54 @@ import w from "./Welcome.module.css";
 import police from "../Images/police.jpg";
 import { useNavigate } from "react-router-dom";
 import { signInWithPopup } from "firebase/auth";
-import { auth, signin } from "../Config/Firebase";
+import {
+  auth,
+  signinFacebook,
+  signinGoogle,
+  signinGithub,
+} from "../Config/Firebase";
 import google from "./google.png";
+import facebook from "./facebook.png";
+import github from "./github.png";
 import { Close } from "@mui/icons-material";
-
 function Welcome(props) {
-  //State for showing failure message
-  const [show, setShow] = useState(true);
-
   const navigate = useNavigate();
-  console.log(auth?.currentUser?.email);
-  const handleClick = async () => {
-    await signInWithPopup(auth, signin)
-      .then((res) => {
-        navigate("/dashboard");
-      })
-      .catch((err) => {
-        setShow(true);
-        console.error(err);
-      });
+
+  //Google Signin
+  const handleGoogle = async () => {
+    try {
+      await signInWithPopup(auth, signinGoogle);
+      navigate("/dashboard");
+      console.log("Sig in succeessfull!!");
+    } catch (err) {
+      console.log(err);
+    }
   };
-  const handleClose = () => {
-    setShow(false);
+
+  // Facebook Signin
+  const handleFacebook = async () => {
+    try {
+      await signInWithPopup(auth, signinFacebook);
+      navigate("/dashboard");
+      console.log("Sig in succeessfull!!");
+    } catch (err) {
+      console.log(err);
+    }
   };
+
+  //Github Signin
+  const handleGithub = async () => {
+    try {
+      await signInWithPopup(auth, signinGithub);
+      navigate("/dashboard");
+      console.log("Sig in succeessfull!!");
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <>
-      {show ? (
-        <div className={w.failure} style={props.theme}>
-          <Close
-            className={w.close}
-            style={props.theme}
-            onClick={handleClose}
-          />
-          <h2 className={w.h2}>Failed to SignIn</h2>
-        </div>
-      ) : null}
       <div className={w.div1} style={props.theme1}></div>
       <div className={w.div2}>
         <img src={police} className={w.img} />
@@ -48,8 +61,15 @@ function Welcome(props) {
           CRMS is a realtime crime reporting system.
         </h4>
         <div className={w.button}>
-          <button className={w.b} onClick={handleClick} style={props.theme}>
-            Sign in with Google <img src={google} alt="" className={w.gimg} />
+          <button className={w.b} onClick={handleGithub} style={props.theme}>
+            <img src={github} alt="" className={w.gimg3} /> Sign in with Github
+          </button>
+          <button className={w.b} onClick={handleGoogle} style={props.theme}>
+            <img src={google} alt="" className={w.gimg1} /> Sign in with Google
+          </button>
+          <button className={w.b} onClick={handleFacebook} style={props.theme}>
+            <img src={facebook} alt="" className={w.gimg2} /> Sign in with
+            Facebook
           </button>
         </div>
       </div>

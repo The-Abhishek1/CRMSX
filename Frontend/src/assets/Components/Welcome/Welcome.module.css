@@ -56,14 +56,14 @@
     text-shadow: 2px 2px 2px whitesmoke;
   }
   60% {
-    text-shadow: 2px 2px 2px whitesmoke;
+    text-shadow: 2px 2px 2px black;
   }
   75% {
     text-shadow: 2px 2px 2px rgb(255, 255, 255);
   }
   100% {
     transform: translate(40%);
-    text-shadow: 2px 2px 2px whitesmoke;
+    /* text-shadow: 2px 2px 2px whitesmoke; */
     text-shadow: 2px 2px 2px black;
   }
 }
@@ -77,13 +77,17 @@
   border-radius: 50%;
   height: 120px;
 }
+
 .button {
   position: relative;
-  top: 200px;
+  top: 180px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .b {
-  width: 200px;
+  width: 220px;
   height: 40px;
   display: flex;
   justify-content: center;
@@ -91,21 +95,27 @@
   background-color: rgb(234, 234, 234);
   border: none;
   border-radius: 7px;
-  text-transform: uppercase;
   font-size: 12px;
   font-weight: 600;
   cursor: pointer;
 }
-.gimg {
+.gimg1 {
   width: 25px;
-  margin-left: 5px;
+  margin-left: -24px;
+  margin-right: 10px;
+}
+.gimg2 {
+  width: 18px;
+  margin-left: -10px;
+  margin-right: 10px;
+}
+.gimg3 {
+  width: 20px;
+  margin-left: -25px;
+  margin-right: 10px;
 }
 .b:hover {
   background-color: rgb(226, 226, 226);
-}
-.link {
-  position: relative;
-  top: 5px;
 }
 
 @media screen and (min-width: 1200px) {
