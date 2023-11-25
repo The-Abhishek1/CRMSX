@@ -1,8 +1,8 @@
-import { auth } from "../Config/Firebase";
+import { authentication } from "../Config/Firebase";
 import firebase from "firebase/compat/app";
 import { getFirestore, collection, getDocs } from "firebase/firestore";
 
-const db = getFirestore(auth);
+const db = getFirestore(authentication);
 
 const response = await getDocs(collection(db, "FIR"));
 

@@ -17,8 +17,8 @@ import a from "./App.module.css";
 import Sample from "./Sample";
 
 function App() {
-  const [dark, setDark] = useState(false);
-  const [light, setLight] = useState(true);
+  const [dark, setDark] = useState(true);
+  const [light, setLight] = useState(false);
   const themeHead = {
     backgroundColor: dark ? "#0a0a0a" : "",
     color: dark ? "white" : "white",
@@ -36,7 +36,7 @@ function App() {
 
   const theme2 = {
     backgroundColor: dark ? "#18181b" : "",
-    color: dark ? "white" : "white",
+    color: dark ? "white" : "",
   };
   const theme_2 = {
     backgroundColor: dark ? "#18181b" : "",
@@ -70,7 +70,7 @@ function App() {
     color: dark ? "white" : "",
   };
   const darkTheme = {
-    color: light ? " rgb(180, 180, 180)" : "",
+    color: light ? "rgb(150,150,150)" : "",
   };
   return (
     <>
@@ -139,7 +139,12 @@ function App() {
               themeHead={themeHead}
               themeSide={themeSide}
             />,
-            <Officers theme1={theme1} theme2={theme2} theme3={theme3} />,
+            <Officers
+              theme={theme}
+              theme1={theme1}
+              theme2={theme2}
+              theme3={theme3}
+            />,
           ]}
         />
         <Route

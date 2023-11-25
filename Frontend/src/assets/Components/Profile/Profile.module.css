@@ -10,101 +10,48 @@
   color: white;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: center;
   width: 60%;
   position: absolute;
-  top: 25%;
-  left: 20%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background-color: rgb(171, 226, 247);
-  color: black;
-  padding: 20px 20px 30px 20px;
-  border-radius: 50px;
+  padding: 40px;
+  border-radius: 20px;
 }
 .h2 {
-  margin-top: 15px;
+  text-align: center;
 }
-
 .img {
-  height: 80px;
-  width: 80px;
-  display: block;
+  height: 100px;
+  width: 100px;
   position: relative;
   top: 20px;
+  left: 80px;
   border-radius: 50%;
   border: 1px solid rgb(186, 186, 186);
   background-color: aliceblue;
   cursor: pointer;
+  margin-bottom: 40px;
 }
-.upload {
-  color: rgb(255, 0, 0);
-  margin-top: 25px;
-  font-size: 16px;
-  font-weight: 100;
+.label {
+  margin-top: 5px;
+  margin-left: 25px;
 }
-.up {
-  width: 80px;
-  height: 20px;
-  position: relative;
-  top: -20px;
-}
-.item {
-  display: flex;
-  flex-direction: column;
-  background-color: skyblue;
-  position: relative;
-  width: 280px;
-  top: 5px;
-  justify-content: flex-start;
-  padding: 30px;
-  height: 220px;
-  border-radius: 15px;
-}
-.item .input {
+.input {
   height: 27px;
+  width: 80%;
   outline: none;
   border: none;
   border-radius: 10px;
-  margin-top: -7px;
   text-align: center;
   cursor: pointer;
+  margin-left: 20px;
 }
 
-.but {
-  position: relative;
-  top: 30px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-}
-.but .button {
-  text-transform: uppercase;
-  width: 80px;
-  height: 30px;
-  font-weight: 700;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-#submit:hover {
-  color: white;
-  background-color: rgb(8, 192, 8);
-}
-#reset:hover {
-  color: white;
-  background-color: rgb(255, 0, 0);
-}
-#reset {
-  color: red;
-  background-color: white;
-}
-#submit {
-  color: rgb(8, 192, 8);
-  background-color: white;
-}
 @media screen and (min-width: 1200px) {
   .container {
     width: 25%;
-    left: 35%;
   }
 }

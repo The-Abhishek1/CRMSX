@@ -41,12 +41,14 @@
   position: relative;
   top: 35px;
   border: 1px solid rgb(103, 103, 103);
+  cursor: pointer;
 }
 .front {
   position: relative;
   top: 35px;
   float: right;
   border: 1px solid rgb(104, 104, 104);
+  cursor: pointer;
 }
 .container {
   display: flex;

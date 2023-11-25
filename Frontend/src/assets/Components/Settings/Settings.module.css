@@ -92,7 +92,7 @@
   background-color: skyblue;
   width: 300px;
   position: relative;
-  top: 40px;
+  top: 60px;
   justify-content: flex-start;
   padding: 30px;
   border-radius: 25px;
@@ -103,7 +103,6 @@
   background-color: skyblue;
   width: 300px;
   position: relative;
-  top: -30px;
   justify-content: flex-start;
   padding: 30px;
   border-radius: 25px;
@@ -124,7 +123,7 @@
   align-items: center;
   position: relative;
   left: -25%;
-  top: -15.8%;
+  top: -12%;
   justify-content: space-around;
 }
 .icons2 {
@@ -136,7 +135,7 @@
   position: relative;
   justify-content: space-around;
   left: -25%;
-  top: -22%;
+  top: -16.5%;
   z-index: 2;
 }
 .link {

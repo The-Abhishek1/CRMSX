@@ -3,83 +3,195 @@
   padding: 0;
   box-sizing: border-box;
 }
+.back {
+  position: relative;
+  left: -40px;
+  top: 20px;
+  border: 1px solid black;
+  cursor: pointer;
+}
+.formback {
+  position: relative;
+  top: -30px;
+  left: -30px;
+  cursor: pointer;
+  color: white;
+  border: 1px solid rgb(255, 255, 255);
+}
+.mesh2 {
+  text-align: center;
+}
+.form {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-top-right-radius: 70px;
+  border-bottom-left-radius: 70px;
+  border-bottom-right-radius: 20px;
+  border-top-left-radius: 20px;
+  padding: 50px;
+  background-color: skyblue;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.h3 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.message {
+  position: fixed;
+  background-color: skyblue;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 40px 30px 40px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  border-top-right-radius: 70px;
+  border-bottom-left-radius: 70px;
+}
+.mesb {
+  border: none;
+  border-radius: 10px;
+  text-transform: uppercase;
+  padding: 10px 5px 10px 5px;
+  width: 200px;
+  font-weight: bold;
+  cursor: pointer;
+}
+#mesb1 {
+  color: red;
+}
+#mesb2 {
+  color: rgb(0, 255, 0);
+}
+#mesb1:hover {
+  color: white;
+  background-color: red;
+}
+#mesb2:hover {
+  color: white;
+  background-color: rgb(17, 255, 0);
+}
 .whole {
-  height: 98.7vh;
+  position: relative;
+  height: auto;
+  padding: 50px;
 }
 .h2 {
   text-align: center;
-  margin: 10px;
   font-size: 19px;
   color: red;
   position: relative;
-  top: 65px;
+  top: 30px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  z-index: 1;
   text-transform: uppercase;
 }
-.container {
+.item {
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  align-items: center;
-  justify-content: space-between;
-  margin: 10px 20px 20px 20px;
-  padding: 20px;
-  height: 84vh;
-  border-radius: 20px;
-  overflow: scroll;
+  flex-direction: column;
   position: relative;
-  top: 65px;
+  top: 10px;
 }
 .card {
-  background-color: skyblue;
-  width: 80%;
-  position: relative;
+  display: flex;
   left: 10%;
-  padding: 20px;
+  width: 80%;
+  flex-direction: column;
+  background-color: skyblue;
+  position: relative;
+  padding: 50px 50px 20px 50px;
   border-radius: 20px;
+  margin-top: 20px;
 }
 .card:hover {
   background-color: rgb(108, 175, 202);
 }
-.img {
-  border-radius: 10px;
-  position: relative;
-  left: 25%;
-}
 .h4 {
-  text-align: center;
-  text-transform: uppercase;
-  margin: 5px;
+  padding-top: 10px;
 }
 .p {
-  position: relative;
-  line-height: 20px;
-  left: 25%;
-  width: 50%;
+  padding-top: 5px;
+}
+
+.button {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 5px 5px 5px;
+  gap: 40px;
+}
+.b {
+  height: 30px;
+  width: 100px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: whitesmoke;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+#b1 {
+  color: red;
+}
+#b2 {
+  color: rgb(0, 255, 0);
+}
+#b1:hover {
+  color: white;
+  background-color: red;
+}
+#b2:hover {
+  color: white;
+  background-color: rgb(0, 255, 0);
+}
+.update {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(108, 175, 202);
+  padding: 30px 40px 20px 40px;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  border: 1px solid white;
+}
+.label {
+  margin-left: 5px;
+}
+.input {
+  height: 25px;
+  outline: none;
+  border-radius: 7px;
+  border: none;
+  text-align: center;
+  margin-top: 3px;
+  width: 100%;
+}
+.button2 {
+  display: flex;
+  justify-content: space-around;
+  gap: 40px;
+  margin: 20px 0 10px 0;
 }
 
 @media screen and (min-width: 1200px) {
-  .container {
-    display: grid;
-    grid-template-columns: 25% 25% 25%;
-    justify-content: space-around;
+  .item {
+    flex-direction: row;
+    gap: 20px;
+    flex-wrap: wrap;
   }
   .card {
-    position: relative;
-    left: 0px;
-    padding: 30px;
-    width: 350px;
+    left: 20px;
+    width: 23%;
   }
-  .img {
-    position: relative;
-    left: 5%;
-    width: 180px;
-  }
-  .h4 {
-    text-align: start;
-    margin-left: 15px;
-  }
-  .p {
-    position: relative;
-    left: 15px;
+  .h2 {
+    text-align: center;
   }
 }

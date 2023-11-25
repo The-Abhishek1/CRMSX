@@ -151,7 +151,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 230px;
+  width: 200px;
   position: relative;
   top: -15px;
   left: 140px;
@@ -226,7 +226,7 @@
   }
 
   .sex {
-    width: 190px;
+    width: 170px;
     left: 145px;
   }
   .label_check {

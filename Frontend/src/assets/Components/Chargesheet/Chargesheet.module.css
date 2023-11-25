@@ -17,13 +17,7 @@
   text-decoration: underline;
   text-align: center;
 }
-.imin {
-  position: relative;
-  width: 110px;
-  height: 20px;
-  left: 158px;
-  top: -18px;
-}
+
 .success {
   position: absolute;
   background-color: rgb(202, 218, 233);
@@ -186,7 +180,6 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  position: relative;
   gap: 20px;
 }
 #reset {
@@ -230,11 +223,9 @@
     margin: 5px;
     left: 15%;
   }
-
   .but {
-    transform: translate(0, 44vh);
+    transform: translate(30px, 100px);
   }
-
   .button {
     width: 100px;
   }

@@ -10,28 +10,8 @@ import {
 } from "@mui/icons-material";
 
 export default function Dashboard(props) {
-  const [show, setShow] = useState(false);
-  useEffect(() => {
-    setShow(true);
-  }, []);
-
-  const handleClose = () => {
-    setShow(false);
-  };
   return (
     <>
-      {show ? (
-        <div className={d.message} style={props.theme1}>
-          <Close
-            className={d.close}
-            style={props.theme1}
-            onClick={handleClose}
-          />
-          <h2 className={d.messageh2} style={{ color: "rgb(0, 255, 0)" }}>
-            Sign in Successfull <Check />
-          </h2>
-        </div>
-      ) : null}
       <div className={d.whole} style={props.theme1}>
         <h1 className={d.head}>Dashboard</h1>
         <div className={d.container}>

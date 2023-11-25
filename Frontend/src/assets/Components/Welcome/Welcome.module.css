@@ -35,7 +35,7 @@
   top: 50%;
   left: 50%;
   width: 70%;
-  transform: translate(-50%, -60%);
+  transform: translate(-50%, -50%);
 }
 .h1 {
   margin: 10px;
@@ -80,7 +80,7 @@
 
 .button {
   position: relative;
-  top: 180px;
+  top: 100px;
   display: flex;
   flex-direction: column;
   gap: 15px;

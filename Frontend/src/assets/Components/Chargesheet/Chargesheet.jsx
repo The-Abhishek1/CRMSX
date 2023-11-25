@@ -86,10 +86,9 @@ function Chargesheet(props) {
               <h4 className={cs.hu4} style={props.themeSettings}>
                 Upload picture
               </h4>
-              <input type="image" src="" alt="" className={cs.imin} />
             </div>
             <div className={cs.item} style={props.theme2}>
-              <h3 className={cs.h3}>Incident Info</h3>
+              <h3 className={cs.h3}>Complaint Info</h3>
               <label htmlFor="complaint_no" className={cs.label}>
                 Complaint No:
               </label>
@@ -125,7 +124,9 @@ function Chargesheet(props) {
                 className={cs.input}
                 required
               />
-              <br />
+            </div>
+            <div className={cs.item} style={props.theme2}>
+              <h3 className={cs.h3}>Incident Info</h3>
               <label htmlFor="incident_time" className={cs.label}>
                 Incident Time:{" "}
               </label>{" "}
@@ -381,7 +382,7 @@ function Chargesheet(props) {
                 onChange={handleInput}
                 required
               />
-            </div>{" "}
+            </div>
             <div className={cs.but}>
               <button
                 type="reset"
