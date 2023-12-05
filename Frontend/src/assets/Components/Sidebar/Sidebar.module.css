@@ -5,12 +5,12 @@
 }
 
 .logout {
-  background-color: rgb(134, 196, 221);
+  background-color: #a1a1aa;
   width: 300px;
   height: 150px;
   position: absolute;
   top: 250px;
-  left: 21.5%;
+  left: 24.5%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -67,10 +67,10 @@
   position: absolute;
   top: 15vh;
   height: 75vh;
-  background-color: rgb(158, 223, 249);
+  background-color: #a1a1aa;
   border-top-right-radius: 60px;
   border-bottom-right-radius: 60px;
-  border: 1px solid rgb(121, 119, 119);
+  border: 1px solid rgb(255, 255, 255);
 }
 
 .aside .linkitems {
@@ -94,13 +94,13 @@
   color: #181818;
   margin-top: 10px;
   padding: 5px;
-  background-color: skyblue;
+  background-color: #71717a;
   border-radius: 10px;
   color: white;
 }
 .aside .linkitems .link:hover {
   border-radius: 10px;
-  background-color: rgb(146, 209, 234);
+  background-color: #52525b;
 }
 
 aside .linkitems .link .h3 {
@@ -117,6 +117,6 @@ aside .linkitems .link .h3 {
 
 @media screen and (min-width: 1200px) {
   .logout {
-    left: 37.8%;
+    left: 38.8%;
   }
 }

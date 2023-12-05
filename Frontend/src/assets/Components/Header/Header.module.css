@@ -8,7 +8,7 @@
   top: 0;
   height: 60px;
   width: 100%;
-  background-color: rgb(151, 209, 232);
+  background-color: #a1a1aa;
 }
 
 .menu {
@@ -25,23 +25,89 @@
   cursor: pointer;
 }
 
-.search {
-  position: absolute;
-  top: 15px;
-  left: 130px;
+.inputwrapper {
+  display: flex;
+  flex-direction: row;
+  background-color: whitesmoke;
+  padding: 3px;
+  align-items: center;
+  border-radius: 7px;
   width: 55%;
-  border-radius: 15px;
-  height: 27px;
-  font-size: 12px;
-  text-align: center;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 5.5rem;
+  top: 1rem;
+}
+.search {
+  width: 100%;
+  padding: 2px;
+  font-size: 13px;
   font-style: italic;
+  text-align: center;
+  cursor: pointer;
   outline: none;
   border: none;
+  border-radius: 20px;
+  background-color: white;
+  margin-left: 20px;
+  padding-right: 10px;
+}
+.searchIcon {
+  color: blue;
+  cursor: pointer;
+  background-color: transparent;
+}
+.results {
+  position: absolute;
+  background-color: white;
+  left: 140px;
+  width: 55%;
+  top: 44px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  color: gray;
+  padding: 0 10px 6px 0;
+}
+.complaintNo {
+  margin-top: 6px;
+  margin-left: 15px;
+  padding: 3px;
+  padding-left: 6px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+.arrowRight {
+  margin-top: -23px;
+  position: relative;
+  left: 315px;
+  padding: 3px;
   cursor: pointer;
 }
+.complaintNo:hover {
+  background-color: rgb(227, 225, 225);
+  border-radius: 5px;
+}
 
-@media screen and (min-width: 1200px) {
-  .search {
-    left: 20%;
+@media screen and (max-width: 320px) {
+  .inputwrapper {
+    left: 4.5rem;
+  }
+}
+@media screen and (max-width: 550px) {
+  .inputwrapper {
+    left: 7rem;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .inputwrapper {
+    left: 11rem;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .inputwrapper {
+    left: 20rem;
   }
 }

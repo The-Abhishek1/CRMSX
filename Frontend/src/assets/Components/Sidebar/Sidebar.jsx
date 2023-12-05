@@ -1,6 +1,6 @@
 import Side from "./Sidebar.module.css";
 import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { signinGoogle, auth } from "../Config/Firebase";
 import { signOut } from "firebase/auth";
 
@@ -71,40 +71,47 @@ function Sidebar(props) {
           </button>
         </div>
       ) : null}
-
       <aside className={Side.aside} style={props.theme1}>
         <div className={Side.linkitems}>
-          <Link to="/dashboard" style={props.themeSide} className={Side.link}>
+          <NavLink
+            to="/dashboard"
+            style={props.themeSide}
+            className={Side.link}
+          >
             <GridView className={Side.item}></GridView>
             <h3 className={Side.h3}>Dashboard</h3>
-          </Link>
-          <Link to="/newfir" style={props.themeSide} className={Side.link}>
+          </NavLink>
+          <NavLink to="/newfir" style={props.themeSide} className={Side.link}>
             <AddCircleOutlineSharp
               className={Side.item}
             ></AddCircleOutlineSharp>
             <h3 className={Side.h3}>New FIR</h3>
-          </Link>
-          <Link to="/chargesheet" style={props.themeSide} className={Side.link}>
+          </NavLink>
+          <NavLink
+            to="/chargesheet"
+            style={props.themeSide}
+            className={Side.link}
+          >
             <ReceiptSharp className={Side.item}></ReceiptSharp>
             <h3 className={Side.h3}>Chargesheet</h3>
-          </Link>
-          <Link to="/officers" style={props.themeSide} className={Side.link}>
+          </NavLink>
+          <NavLink to="/officers" style={props.themeSide} className={Side.link}>
             <Groups2Sharp className={Side.item}></Groups2Sharp>
             <h3 className={Side.h3}>Officers</h3>
-          </Link>
-          <Link to="/news" style={props.themeSide} className={Side.link}>
+          </NavLink>
+          <NavLink to="/news" style={props.themeSide} className={Side.link}>
             <Newspaper className={Side.item}></Newspaper>
             <h3 className={Side.h3}>News</h3>
-          </Link>
-          <Link to="/profile" style={props.themeSide} className={Side.link}>
+          </NavLink>
+          <NavLink to="/profile" style={props.themeSide} className={Side.link}>
             <AccountBoxSharp className={Side.item}></AccountBoxSharp>
             <h3 className={Side.h3}>Profile</h3>
-          </Link>
-          <Link to="/settings" style={props.themeSide} className={Side.link}>
+          </NavLink>
+          <NavLink to="/settings" style={props.themeSide} className={Side.link}>
             <SettingsApplications className={Side.item}></SettingsApplications>
             <h3 className={Side.h3}>Settings</h3>
-          </Link>
-          <Link
+          </NavLink>
+          <NavLink
             className={Side.link}
             style={props.themeSide}
             id={Side.last}
@@ -112,7 +119,7 @@ function Sidebar(props) {
           >
             <Logout className={Side.item}></Logout>
             <h3 className={Side.h3}>Logout</h3>
-          </Link>
+          </NavLink>
         </div>
       </aside>
     </>

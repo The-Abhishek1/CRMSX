@@ -8,6 +8,8 @@ import {
   DeleteForever,
   Star,
 } from "@mui/icons-material";
+import { signinGoogle, auth } from "../Config/Firebase";
+import { signOut } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 
 export default function Settings(props) {
@@ -21,7 +23,15 @@ export default function Settings(props) {
   const [delbtn, setDelbtn] = useState(false);
   const navigate = useNavigate();
   const handleWelcome = () => {
-    navigate("/");
+    auth.currentUser
+      .delete()
+      .then(() => {
+        console.log("Account Deletion Suuccessful!!!");
+        navigate("/");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   //Hiding delete message
@@ -38,7 +48,14 @@ export default function Settings(props) {
     setLogout(false);
   };
   const handleLogyes = () => {
-    navigate("/signin");
+    signOut(auth)
+      .then(() => {
+        console.log("Sign-out Successful");
+        navigate("/");
+      })
+      .catch(() => {
+        console.log("An error happened");
+      });
   };
 
   //About page

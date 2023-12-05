@@ -35,19 +35,22 @@
   top: 50px;
   margin: 0px 40px 0px 40px;
   padding: 19px 20px 5px 20px;
-  background-color: rgb(171, 226, 247);
+  background-color: #a1a1aa;
 }
 .h2 {
   text-align: center;
   text-transform: uppercase;
   font-size: 20px;
-  color: red;
+  color: rgb(255, 94, 0);
+}
+.cp {
+  margin: -10px 0 10px 10px;
 }
 .item1 {
   padding: 10px;
   margin: 5px 10px 10px 10px;
   display: flex;
-  background-color: skyblue;
+  background-color: #71717a;
   flex-direction: column;
 }
 .h4 {
@@ -65,7 +68,7 @@
 }
 .item2 {
   margin: 10px;
-  background-color: skyblue;
+  background-color: #71717a;
   padding: 10px;
 }
 .fl {
@@ -81,11 +84,13 @@
   width: 55%;
   text-align: center;
 }
+
 .textarea {
   border: none;
   outline: none;
   border-radius: 10px;
   margin: 5px 0 0 20px;
+  text-align: center;
 }
 .button {
   display: flex;

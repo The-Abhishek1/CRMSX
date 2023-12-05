@@ -12,7 +12,7 @@
   height: 85vh;
   overflow: scroll;
   scroll-behavior: smooth;
-  background-color: rgb(171, 226, 247);
+  background-color: #a1a1aa;
   margin: 20px 20px 0 20px;
 }
 .h2 {

@@ -16,7 +16,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgb(171, 226, 247);
+  background-color: #a1a1aa;
   padding: 40px;
   border-radius: 20px;
 }
@@ -41,17 +41,24 @@
 }
 .input {
   height: 27px;
-  width: 80%;
+  width: 90%;
   outline: none;
   border: none;
   border-radius: 10px;
   text-align: center;
   cursor: pointer;
-  margin-left: 20px;
+  margin-left: 10px;
 }
 
 @media screen and (min-width: 1200px) {
   .container {
     width: 25%;
+  }
+  .img {
+    left: 100px;
+  }
+  .label,
+  .input {
+    margin-left: 30px;
   }
 }

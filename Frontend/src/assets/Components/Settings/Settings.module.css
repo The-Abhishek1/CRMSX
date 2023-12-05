@@ -14,12 +14,13 @@
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
-  background-color: skyblue;
+  background-color: #a1a1aa;
   padding: 15px;
   width: 70%;
   height: 120px;
   border-radius: 10px;
   color: white;
+  border: 1px solid black;
 }
 #del {
   width: 70%;
@@ -78,7 +79,7 @@
   position: absolute;
   top: 15%;
   left: 10%;
-  background-color: rgb(171, 226, 247);
+  background-color: #a1a1aa;
   padding: 10px;
   border-radius: 25px;
 }
@@ -89,7 +90,7 @@
 .items1 {
   display: flex;
   flex-direction: column;
-  background-color: skyblue;
+  background-color: #71717a;
   width: 300px;
   position: relative;
   top: 60px;
@@ -100,7 +101,7 @@
 .items2 {
   display: flex;
   flex-direction: column;
-  background-color: skyblue;
+  background-color: #71717a;
   width: 300px;
   position: relative;
   justify-content: flex-start;
@@ -113,7 +114,7 @@
 }
 .h4 {
   margin: 15px 0 0 40px;
-  color: rgb(55, 55, 241);
+  color: rgb(55, 241, 58);
 }
 .icons1 {
   display: flex;

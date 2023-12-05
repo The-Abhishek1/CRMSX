@@ -5,10 +5,11 @@
 }
 .back {
   position: relative;
-  left: -40px;
-  top: 20px;
+  left: 20px;
+  top: 50px;
   border: 1px solid black;
   cursor: pointer;
+  z-index: 1;
 }
 .formback {
   position: relative;
@@ -31,7 +32,7 @@
   border-bottom-right-radius: 20px;
   border-top-left-radius: 20px;
   padding: 50px;
-  background-color: skyblue;
+  background-color: #a1a1aa;
   display: flex;
   flex-direction: column;
   gap: 5px;
@@ -42,7 +43,7 @@
 }
 .message {
   position: fixed;
-  background-color: skyblue;
+  background-color: #a1a1aa;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -78,39 +79,67 @@
 }
 .whole {
   position: relative;
+  min-height: 100vh;
   height: auto;
   padding: 50px;
+  display: flex;
+  flex-direction: column;
+  top: -10px;
+}
+.notification {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  position: absolute;
+  top: 70px;
+  width: 80%;
+  height: 20px;
+  left: 10%;
+  border: none;
+  border-radius: 30px;
+  background-color: #a1a1aa;
+}
+.np {
+  color: red;
+}
+.noteClose {
+  position: relative;
+  left: 110px;
+  color: red;
+  cursor: pointer;
+}
+.full {
+  height: 100vh;
+}
+
+.div {
+  position: relative;
+  top: 85px;
 }
 .h2 {
   text-align: center;
   font-size: 19px;
   color: red;
   position: relative;
-  top: 30px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  top: 10px;
   z-index: 1;
   text-transform: uppercase;
 }
-.item {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  top: 10px;
-}
+
 .card {
   display: flex;
-  left: 10%;
-  width: 80%;
+  left: 15%;
+  width: 70%;
   flex-direction: column;
-  background-color: skyblue;
+  background-color: #a1a1aa;
   position: relative;
-  padding: 50px 50px 20px 50px;
+  padding: 50px 50px 20px 90px;
   border-radius: 20px;
-  margin-top: 20px;
+  margin-top: 35px;
 }
 .card:hover {
-  background-color: rgb(108, 175, 202);
+  background-color: #88888e;
 }
 .h4 {
   padding-top: 10px;
@@ -124,6 +153,17 @@
   justify-content: space-around;
   margin: 20px 5px 5px 5px;
   gap: 40px;
+  position: relative;
+  left: -30px;
+  width: 100%;
+}
+.button2 {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 5px 5px 5px;
+  gap: 40px;
+  position: relative;
+  width: 100%;
 }
 .b {
   height: 30px;
@@ -154,12 +194,20 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgb(108, 175, 202);
+  background-color: #a1a1aa;
   padding: 30px 40px 20px 40px;
   color: black;
   display: flex;
   flex-direction: column;
   border-radius: 10px;
+  border: 1px solid white;
+}
+.upback {
+  position: relative;
+  left: -30px;
+  top: -20px;
+  cursor: pointer;
+  color: white;
   border: 1px solid white;
 }
 .label {
@@ -174,24 +222,68 @@
   margin-top: 3px;
   width: 100%;
 }
+.mp {
+  color: red;
+}
 .button2 {
   display: flex;
   justify-content: space-around;
   gap: 40px;
   margin: 20px 0 10px 0;
 }
+.success {
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 250px;
+  padding: 10px;
+  border-top-right-radius: 40px;
+  border-bottom-left-radius: 40px;
+  background-color: #a1a1aa;
+}
+.ok {
+  text-transform: uppercase;
+  padding: 7px 40px 7px 40px;
+  position: relative;
+  left: 25%;
+  margin: 5px;
+  font-weight: bold;
+  color: rgb(0, 255, 0);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.ok:hover {
+  color: white;
+  background-color: rgb(0, 255, 0);
+}
+.officerImage {
+  width: 180px;
+  height: 180px;
+  position: relative;
+  left: -20px;
+  border-radius: 20px;
+}
 
 @media screen and (min-width: 1200px) {
-  .item {
+  .whole {
     flex-direction: row;
-    gap: 20px;
     flex-wrap: wrap;
+    gap: 50px;
   }
   .card {
-    left: 20px;
+    left: 12%;
     width: 23%;
+    height: 400px;
   }
   .h2 {
     text-align: center;
+  }
+  .message {
+    padding: 60px;
+  }
+  .noteClose {
+    left: 500px;
   }
 }

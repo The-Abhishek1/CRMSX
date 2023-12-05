@@ -18,7 +18,7 @@
   font-size: 27px;
   text-align: center;
   margin: 30px 10px 10px 10px;
-  color: red;
+  color: rgb(85, 255, 0);
 }
 .container {
   display: flex;
@@ -40,10 +40,13 @@
   height: 75px;
   display: flex;
   align-items: center;
-  background-color: rgb(171, 226, 247);
+  background-color: #a1a1aa;
 }
 .container .item:hover {
-  background-color: skyblue;
+  background-color: #88888e;
+}
+.icon {
+  color: rgb(2, 255, 61);
 }
 .h2 {
   text-align: start;
@@ -51,6 +54,7 @@
   font-size: 20px;
   position: relative;
   left: 7%;
+  color: rgb(128, 255, 0);
 }
 
 .h1 {
@@ -60,8 +64,85 @@
   position: absolute;
   right: 45px;
   padding: 5px;
+  color: rgb(2, 255, 61);
 }
-
+.update {
+  border: none;
+  padding: 5px 10px 5px 10px;
+  float: right;
+  margin: -40px 60px 0 0;
+  font-weight: bold;
+  border-radius: 5px;
+  background-color: rgb(0, 255, 0);
+  color: white;
+  cursor: pointer;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -40%);
+  z-index: 1;
+  background-color: #71717a;
+  padding: 30px;
+  border-radius: 30px;
+  gap: 1px;
+}
+.close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+}
+.form .label {
+  position: relative;
+  bottom: 5px;
+  margin-left: 10px;
+}
+.form .input {
+  height: 25px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  text-align: center;
+}
+.p {
+  color: red;
+  margin-top: 5px;
+}
+.button {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+.b {
+  border: none;
+  width: 100px;
+  margin: 5px;
+  height: 30px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: 700;
+  cursor: pointer;
+}
+#b1 {
+  color: red;
+  background-color: white;
+}
+#b2 {
+  color: rgb(0, 255, 30);
+  background-color: white;
+}
+#b1:hover {
+  background-color: red;
+  color: white;
+}
+#b2:hover {
+  background-color: rgb(0, 255, 30);
+  color: white;
+}
 @media screen and (min-width: 1200px) {
   .container {
     display: grid;
@@ -71,5 +152,13 @@
   .container .item {
     height: 140px;
     left: 30px;
+  }
+  .update {
+    position: relative;
+    float: right;
+    right: 200px;
+  }
+  .form {
+    transform: translate(-60%, -45%);
   }
 }

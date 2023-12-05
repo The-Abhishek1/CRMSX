@@ -24,6 +24,7 @@
   background-color: blue;
   border: none;
   border-radius: 5px;
+  font-weight: bold;
 }
 .b1:hover {
   color: blue;
@@ -58,7 +59,7 @@
   padding: 15px;
   overflow: scroll;
   height: 85vh;
-  background-color: rgb(171, 226, 247);
+  background-color: #a1a1aa;
 }
 .h1 {
   text-align: center;
@@ -113,12 +114,21 @@
   display: inline;
   margin: 0 5px 0 5px;
 }
-
+.p1 {
+  color: red;
+  position: relative;
+  left: 120px;
+}
+.p2 {
+  color: red;
+  margin: 10px 0 0 20px;
+}
 .textarea {
   outline: none;
   border: none;
   margin: 5px 0 5px 10px;
   border-radius: 5px;
+  text-align: center;
 }
 #i2 {
   margin-left: 10px;
@@ -138,6 +148,7 @@
   font-weight: 600;
   border: none;
   border-radius: 5px;
+  cursor: pointer;
 }
 #reset {
   color: red;

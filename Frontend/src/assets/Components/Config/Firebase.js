@@ -5,6 +5,8 @@ import {
   FacebookAuthProvider,
   GithubAuthProvider,
 } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
+import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
   apiKey: "AIzaSyC73_iUmAMCzeKlbAQonHSy2oVpDOSNr2I",
@@ -23,6 +25,8 @@ export const auth = getAuth(app);
 export const signinGoogle = new GoogleAuthProvider(app);
 export const signinFacebook = new FacebookAuthProvider(app);
 export const signinGithub = new GithubAuthProvider(app);
+export const db = getFirestore(app);
+export const storage = getStorage(app);
 
 //firebase login
 //firebase init

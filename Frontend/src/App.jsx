@@ -14,9 +14,13 @@ import Officers from "./assets/Components/Officers/Officers";
 import { useEffect, useState } from "react";
 import { DarkMode, LightMode } from "@mui/icons-material";
 import a from "./App.module.css";
-import Sample from "./Sample";
+import OfficerView from "./assets/Components/Officers/OfficerView";
+import OfficerAdd from "./assets/Components/Officers/OfficerAdd";
+import OfficerUpdate from "./assets/Components/Officers/OfficerUpdate";
+import ShowChargesheet from "./assets/Components/ViewChargeSheets/ShowChargesheet";
 
 function App() {
+  const [search, setSearch] = useState("");
   const [dark, setDark] = useState(true);
   const [light, setLight] = useState(false);
   const themeHead = {
@@ -44,7 +48,7 @@ function App() {
     boxShadow: dark ? " 1px 1.5px 3px #525252 " : "",
   };
   const themeIcons = {
-    color: dark ? "rgb(0, 255, 0)" : "white",
+    color: dark ? "rgb(255, 111, 0)" : "",
   };
 
   const theme3 = {
@@ -70,7 +74,7 @@ function App() {
     color: dark ? "white" : "",
   };
   const darkTheme = {
-    color: light ? "rgb(150,150,150)" : "",
+    color: light ? "black" : "",
   };
   return (
     <>
@@ -97,11 +101,35 @@ function App() {
           path="/dashboard"
           element={[
             <Header
+              search={search}
+              setSearch={setSearch}
               theme1={theme1}
               themeHead={themeHead}
               themeSide={themeSide}
             />,
             <Dashboard
+              theme={theme}
+              theme1={theme1}
+              theme2={theme2}
+              theme_2={theme_2}
+              themeIcons={themeIcons}
+            />,
+          ]}
+        />
+
+        <Route
+          path="/viewchargesheet"
+          element={[
+            <Header
+              search={search}
+              setSearch={setSearch}
+              theme1={theme1}
+              themeHead={themeHead}
+              themeSide={themeSide}
+            />,
+            <ShowChargesheet
+              search={search}
+              theme={theme}
               theme1={theme1}
               theme2={theme2}
               theme_2={theme_2}
@@ -113,33 +141,95 @@ function App() {
           path="/newfir"
           element={[
             <Header
+              search={search}
+              setSearch={setSearch}
               theme1={theme1}
               themeHead={themeHead}
               themeSide={themeSide}
             />,
-            <Complaintform theme1={theme1} theme2={theme2} />,
+            <Complaintform theme={theme} theme1={theme1} theme2={theme2} />,
           ]}
         />
         <Route
           path="/chargesheet"
           element={[
             <Header
+              search={search}
+              setSearch={setSearch}
               theme1={theme1}
               themeHead={themeHead}
               themeSide={themeSide}
             />,
-            <Chargesheet theme1={theme1} theme2={theme2} />,
+            <Chargesheet theme={theme} theme1={theme1} theme2={theme2} />,
           ]}
         />
         <Route
           path="/officers"
           element={[
             <Header
+              search={search}
+              setSearch={setSearch}
               theme1={theme1}
               themeHead={themeHead}
               themeSide={themeSide}
             />,
             <Officers
+              search={search}
+              theme={theme}
+              theme1={theme1}
+              theme2={theme2}
+              theme3={theme3}
+            />,
+          ]}
+        />
+        <Route
+          path="/officersview"
+          element={[
+            <Header
+              search={search}
+              setSearch={setSearch}
+              theme1={theme1}
+              themeHead={themeHead}
+              themeSide={themeSide}
+            />,
+            <OfficerView
+              setSearch={setSearch}
+              theme={theme}
+              theme1={theme1}
+              theme2={theme2}
+              theme3={theme3}
+            />,
+          ]}
+        />
+        <Route
+          path="/officersadd"
+          element={[
+            <Header
+              search={search}
+              setSearch={setSearch}
+              theme1={theme1}
+              themeHead={themeHead}
+              themeSide={themeSide}
+            />,
+            <OfficerAdd
+              theme={theme}
+              theme1={theme1}
+              theme2={theme2}
+              theme3={theme3}
+            />,
+          ]}
+        />
+        <Route
+          path="/officersupdate"
+          element={[
+            <Header
+              search={search}
+              setSearch={setSearch}
+              theme1={theme1}
+              themeHead={themeHead}
+              themeSide={themeSide}
+            />,
+            <OfficerUpdate
               theme={theme}
               theme1={theme1}
               theme2={theme2}
@@ -151,6 +241,8 @@ function App() {
           path="/news"
           element={[
             <Header
+              search={search}
+              setSearch={setSearch}
               theme1={theme1}
               themeHead={themeHead}
               themeSide={themeSide}
@@ -162,6 +254,8 @@ function App() {
           path="/profile"
           element={[
             <Header
+              search={search}
+              setSearch={setSearch}
               theme1={theme1}
               themeHead={themeHead}
               themeSide={themeSide}
@@ -173,6 +267,8 @@ function App() {
           path="/settings"
           element={[
             <Header
+              search={search}
+              setSearch={setSearch}
               theme1={theme1}
               themeHead={themeHead}
               themeSide={themeSide}
@@ -190,6 +286,8 @@ function App() {
           path="/about"
           element={[
             <Header
+              search={search}
+              setSearch={setSearch}
               theme1={theme1}
               themeHead={themeHead}
               themeSide={themeSide}
@@ -202,27 +300,40 @@ function App() {
             />,
           ]}
         />
-        <Route path="/sample" element={<Sample />} />
         <Route
           path="/contact"
           element={[
             <Header
+              search={search}
+              setSearch={setSearch}
               theme1={theme1}
               themeHead={themeHead}
               themeSide={themeSide}
             />,
-            <Contact theme1={theme1} theme2={theme2} theme3={theme3} />,
+            <Contact
+              theme={theme}
+              theme1={theme1}
+              theme2={theme2}
+              theme3={theme3}
+            />,
           ]}
         />
         <Route
           path="/feedback"
           element={[
             <Header
+              search={search}
+              setSearch={setSearch}
               theme1={theme1}
               themeHead={themeHead}
               themeSide={themeSide}
             />,
-            <Feedback theme1={theme1} theme2={theme2} theme3={theme3} />,
+            <Feedback
+              theme={theme}
+              theme1={theme1}
+              theme2={theme2}
+              theme3={theme3}
+            />,
           ]}
         />
       </Routes>

@@ -1,10 +1,20 @@
 import { useState } from "react";
 import cf from "./Complaintform.module.css";
-import axios from "axios";
+import { auth, db, storage } from "../Config/Firebase";
+import { addDoc, collection } from "firebase/firestore";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
 import { Check } from "@mui/icons-material";
 import { Navigate, useNavigate } from "react-router-dom";
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
 function Complaintform(props) {
+  //Showing Success message
+  const [success, setSuccess] = useState(false);
+  //Hiding Complaint Form
+  const [hide, setHide] = useState(true);
+  const [evidence, setEvidence] = useState(null);
   // Generating Complaint No
   const complaint_num = "AB" + Math.floor(Math.random() * 1000000);
   const [no, setNo] = useState(complaint_num);
@@ -22,145 +32,119 @@ function Complaintform(props) {
     date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
   const [time, setTime] = useState(currentTime);
 
-  //State for controlling user inputs
-  const [inputs, setInputs] = useState({
-    complaint_date: c_date,
-    complaint_time: time,
-    complaint_no: no,
-    incident_date: "",
-    incident_time: "",
-    incident_loc: "",
-    complainant_name: "",
-    complainant_gender: "",
-    complainant_no: "",
-    complainant_email: "",
-    complainant_address: "",
-    complainant_type: "",
-    typeof_incident: "",
-    vehicle_make: "",
-    vehicle_model: "",
-    vehicle_color: "",
-    registered_no: "",
-    suspect_name: "",
-    suspect_physic: "",
-    suspect_clothing: "",
-    witness_name: "",
-    witness_no: "",
-    witness_statement: "",
-    evidence_info: "",
-    injuries: "",
-    incident_description: "",
-    comments: "",
-    complainant_sign: "",
+  //Schema for controlling inputs
+  const schema = yup.object().shape({
+    complaint_date: yup.string(),
+    complaint_time: yup.string(),
+    complaint_no: yup.string(),
+    incident_date: yup.string().required("Date is required"),
+    incident_time: yup.string().required("Time is required"),
+    incident_loc: yup.string().required("Location is required"),
+    complainant_name: yup.string().required("Name is required"),
+    complainant_gender: yup.string().required("Gender is required"),
+    complainant_no: yup.string().min(10).max(10).required("Number is required"),
+    complainant_email: yup.string().email().required("Email is required"),
+    complainant_address: yup.string().required("Address is required"),
+    complainant_type: yup.string().required("Type is required"),
+    typeof_incident: yup.string().required("Type is required"),
+    vehicle_make: yup.string(),
+    vehicle_model: yup.string(),
+    vehicle_color: yup.string(),
+    registered_no: yup.string(),
+    suspect_name: yup.string(),
+    suspect_physic: yup.string(),
+    suspect_clothing: yup.string(),
+    witness_name: yup.string(),
+    witness_no: yup.string().min(10).max(10),
+    witness_statement: yup.string(),
+    evidence_info: yup.string(),
+    injuries: yup.string(),
+    incident_description: yup.string().required("Description is required"),
+    comments: yup.string(),
+    complainant_sign: yup.string().required("Sign is required"),
+  });
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(schema),
   });
 
-  const [errors, setErrors] = useState({});
+  const handleSubmitAdd = async (data) => {
+    console.log(data);
+    if (evidence == null) return;
+    const evidenceRef = ref(storage, `evidence/${data.complaint_no}`);
+    try {
+      await uploadBytes(evidenceRef, evidence).then((res) => {
+        console.log("Image Uploaded Succeesfully");
+      }),
+        getDownloadURL(evidenceRef).then((url) => {
+          globalThis.firEvidence = url;
+          console.log(firEvidence);
+        });
+      const docRef = await addDoc(collection(db, "Complaint"), {
+        complaint_date: data.complaint_date,
+        complaint_time: data.complaint_time,
+        complaint_no: data.complaint_no,
+        incident_date: data.incident_date,
+        incident_time: data.incident_time,
+        incident_loc: data.incident_loc,
+        complainant_name: data.complainant_name,
+        complainant_gender: data.complainant_gender,
+        complainant_no: data.complainant_no,
+        complainant_email: data.complainant_email,
+        complainant_address: data.complainant_address,
+        complainant_type: data.complainant_type,
+        typeof_incident: data.typeof_incident,
+        vehicle_make: data.vehicle_make,
+        vehicle_model: data.vehicle_model,
+        vehicle_color: data.vehicle_color,
+        registered_no: data.registered_no,
+        suspect_name: data.suspect_name,
+        suspect_physic: data.suspect_physic,
+        suspect_clothing: data.suspect_clothing,
+        witness_name: data.witness_name,
+        witness_no: data.witness_no,
+        witness_statement: data.witness_statement,
+        evidence_info: data.evidence_info,
+        injuries: data.injuries,
+        incident_description: data.incident_description,
+        comments: data.comments,
+        complainant_sign: data.complainant_sign,
+        complaintEvidence: firEvidence,
+      });
 
-  //Showing Success message
-  const [success, setSuccess] = useState(false);
-  //Hiding Complaint Form
-  const [hide, SetHide] = useState(true);
+      setHide(false);
+      setSuccess(true);
 
-  const handleInput = (event) => {
-    const { name, value } = event.target;
-    setInputs({ ...inputs, [name]: value });
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    setErrors(validate(inputs));
-    console.log(inputs);
-    if (
-      errors.complainant_name === "" &&
-      errors.complainant_no === "" &&
-      errors.complainant_email === "" &&
-      errors.complainant_address === "" &&
-      errors.incident_description === "" &&
-      errors.complainant_sign === ""
-    ) {
-      axios
-        .post("http://localhost:8081/newfir", inputs)
-        .then((res) => setSuccess(true), SetHide(false))
-        .catch((err) => console.log(err));
+      console.log("Document Written Id: ", docRef.id);
+    } catch (e) {
+      console.error(e);
     }
   };
   const navigate = useNavigate();
   const handleClick = () => {
     navigate("/dashboard");
   };
-  const validate = (inputs) => {
-    let error = {};
-    const email_pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    //Complaint name
-    if (!inputs.complainant_name) {
-      error.complainant_name = "Name is required!!";
-    } else {
-      error.complainant_name = "";
-    }
-
-    //Contact No
-    if (!inputs.complainant_no) {
-      error.complainant_no = "Number should not be empty!!";
-    } else if (inputs.complainant_no.length != 10) {
-      error.complainant_no = "Number is not valid!!";
-    } else {
-      error.complainant_no = "";
-    }
-
-    //Email
-    if (!inputs.complainant_email) {
-      error.complainant_email = "Email should not be empty!!";
-    } else if (!email_pattern.test(inputs.complainant_email)) {
-      error.complainant_email = "Email is not valid!!";
-    } else {
-      error.complainant_email = "";
-    }
-
-    //Address
-    if (!inputs.complainant_address) {
-      error.complainant_address = "Address should not be empty!!";
-    } else {
-      error.complainant_address = "";
-    }
-
-    //Description
-    if (!inputs.incident_description) {
-      error.incident_description = "Description is required!!";
-    } else {
-      error.incident_description = "";
-    }
-
-    //Complainant Signature
-    if (!inputs.complainant_sign) {
-      error.complainant_sign = "Signature is required!!";
-    } else {
-      error.complainant_sign = "";
-    }
-    return error;
-  };
 
   return (
     <>
       {success ? (
-        <div className={cf.success} style={props.theme1}>
-          <h1 className={cf.s} style={props.theme1}>
-            Success
-          </h1>
-          <Check
-            className={cf.c}
-            style={props.theme1}
-            sx={{ fontSize: 32 }}
-          ></Check>
-          <button type="button" onClick={handleClick} className={cf.bu}>
-            Continue
-          </button>
+        <div className={cf.full} style={props.theme1}>
+          <div className={cf.success} style={props.theme}>
+            <h1 className={cf.s}>Success</h1>
+            <Check className={cf.c} sx={{ fontSize: 32 }}></Check>
+            <button type="button" onClick={handleClick} className={cf.bu}>
+              Continue
+            </button>
+          </div>
         </div>
       ) : null}
       {hide ? (
         <form
           action=""
-          onSubmit={handleSubmit}
+          onSubmit={handleSubmit(handleSubmitAdd)}
           style={props.theme1}
           className={cf.form}
         >
@@ -179,7 +163,7 @@ function Complaintform(props) {
                 readOnly
                 className={cf.input}
                 value={c_date}
-                onChange={handleInput}
+                {...register("complaint_date")}
               />
               <br />
               <label htmlFor="complaint_time" className={cf.label}>
@@ -192,7 +176,7 @@ function Complaintform(props) {
                 readOnly
                 className={cf.input}
                 value={time}
-                onChange={handleInput}
+                {...register("complaint_time")}
               />
               <br />
               <label htmlFor="complaint_no" className={cf.label}>
@@ -204,7 +188,7 @@ function Complaintform(props) {
                 id=""
                 readOnly
                 className={cf.input}
-                onChange={handleInput}
+                {...register("complaint_no")}
                 value={no}
               />
             </div>
@@ -219,9 +203,9 @@ function Complaintform(props) {
                 name="incident_date"
                 id=""
                 className={cf.input}
-                onChange={handleInput}
-                required
+                {...register("incident_date")}
               />
+              <p className={cf.p}>{errors.incident_date?.message}</p>
               <br />
               <label htmlFor="incident_time" className={cf.label}>
                 Incident Time:
@@ -231,9 +215,9 @@ function Complaintform(props) {
                 name="incident_time"
                 id=""
                 className={cf.input}
-                onChange={handleInput}
-                required
+                {...register("incident_time")}
               />
+              <p className={cf.p}>{errors.incident_time?.message}</p>
               <br />
               <label htmlFor="incident_loc" className={cf.label}>
                 Incident Loc:
@@ -243,9 +227,9 @@ function Complaintform(props) {
                 name="incident_loc"
                 id=""
                 className={cf.input}
-                onChange={handleInput}
-                required
+                {...register("incident_loc")}
               />
+              <p className={cf.p}>{errors.incident_loc?.message}</p>
             </div>
 
             <div className={cf.item} style={props.theme2}>
@@ -258,11 +242,9 @@ function Complaintform(props) {
                 name="complainant_name"
                 id=""
                 className={cf.input}
-                onChange={handleInput}
+                {...register("complainant_name")}
               />
-              {errors.complainant_name && (
-                <p className={cf.ep}>{errors.complainant_name}</p>
-              )}
+              <p className={cf.p}>{errors.complainant_name?.message}</p>
               <br />
               <label htmlFor="male" className={cf.label}>
                 Gender:
@@ -274,7 +256,7 @@ function Complaintform(props) {
                     name="complainant_gender"
                     id=""
                     value="Male"
-                    onClick={handleInput}
+                    {...register("complainant_gender")}
                   />
                   Male{" "}
                 </label>
@@ -285,7 +267,7 @@ function Complaintform(props) {
                     name="complainant_gender"
                     id=""
                     value="Female"
-                    onClick={handleInput}
+                    {...register("complainant_gender")}
                   />
                   Female
                 </label>{" "}
@@ -295,11 +277,12 @@ function Complaintform(props) {
                     name="complainant_gender"
                     id=""
                     value="Other"
-                    onClick={handleInput}
+                    {...register("complainant_gender")}
                   />
                   Other
                 </label>
               </div>
+              <p className={cf.p}>{errors.complainant_gender?.message}</p>
               <br />
               <label htmlFor="complainant_con" className={cf.label}>
                 Contact No:
@@ -309,11 +292,8 @@ function Complaintform(props) {
                 name="complainant_no"
                 id=""
                 className={cf.input}
-                onChange={handleInput}
+                {...register("complainant_no")}
               />
-              {errors.complainant_no && (
-                <p className={cf.ep}>{errors.complainant_no}</p>
-              )}
               <br />
               <label htmlFor="complainant_email" className={cf.label}>
                 Email:
@@ -323,11 +303,9 @@ function Complaintform(props) {
                 name="complainant_email"
                 id=""
                 className={cf.input}
-                onChange={handleInput}
+                {...register("complainant_email")}
               />
-              {errors.complainant_email && (
-                <p className={cf.ep}>{errors.complainant_email}</p>
-              )}
+              <p className={cf.p}>{errors.complainant_email?.message}</p>
               <br />
               <label htmlFor="complainant_address" className={cf.label}>
                 Adress:
@@ -337,11 +315,9 @@ function Complaintform(props) {
                 name="complainant_address"
                 id=""
                 className={cf.input}
-                onChange={handleInput}
+                {...register("complainant_address")}
               />
-              {errors.complainant_address && (
-                <p className={cf.ep}>{errors.complainant_address}</p>
-              )}
+              <p className={cf.p}>{errors.complainant_address?.message}</p>
             </div>
 
             <div className={cf.item} style={props.theme2}>
@@ -349,9 +325,8 @@ function Complaintform(props) {
               <select
                 name="complainant_type"
                 id=""
-                onChange={handleInput}
+                {...register("complainant_type")}
                 className={cf.select}
-                required
               >
                 <option>Choose</option>
                 <option value="Victim">Victim</option>
@@ -365,9 +340,8 @@ function Complaintform(props) {
               <select
                 name="typeof_incident"
                 id=""
-                onChange={handleInput}
+                {...register("typeof_incident")}
                 className={cf.select}
-                required
               >
                 <option>Choose</option>
                 <option value="Theft">Theft</option>
@@ -387,7 +361,7 @@ function Complaintform(props) {
               <input
                 type="text"
                 name="vehicle_make"
-                onChange={handleInput}
+                {...register("vehicle_make")}
                 className={cf.input}
               />
               <br />
@@ -399,7 +373,7 @@ function Complaintform(props) {
                 name="vehicle_model"
                 id=""
                 className={cf.input}
-                onChange={handleInput}
+                {...register("vehicle_model")}
               />
               <br />
               <label htmlFor="vehicle_color" className={cf.label}>
@@ -410,7 +384,7 @@ function Complaintform(props) {
                 name="vehicle_color"
                 id=""
                 className={cf.input}
-                onChange={handleInput}
+                {...register("vehicle_color")}
               />
               <br />
               <label htmlFor="registered_no" className={cf.label}>
@@ -421,7 +395,7 @@ function Complaintform(props) {
                 name="registered_no"
                 id=""
                 className={cf.input}
-                onChange={handleInput}
+                {...register("registered_no")}
               />
             </div>
 
@@ -435,7 +409,7 @@ function Complaintform(props) {
                 name="suspect_name"
                 id=""
                 className={cf.input}
-                onChange={handleInput}
+                {...register("suspect_name")}
               />
               <br />
               <label htmlFor="suspect_physic" className={cf.label}>
@@ -448,7 +422,7 @@ function Complaintform(props) {
                 cols="45"
                 rows="5"
                 className={cf.textarea}
-                onChange={handleInput}
+                {...register("suspect_physic")}
               ></textarea>
               <br />
               <br />
@@ -462,7 +436,7 @@ function Complaintform(props) {
                 cols="45"
                 rows="5"
                 className={cf.textarea}
-                onChange={handleInput}
+                {...register("suspect_clothing")}
               ></textarea>
             </div>
 
@@ -476,7 +450,7 @@ function Complaintform(props) {
                 name="witness_name"
                 id=""
                 className={cf.input}
-                onChange={handleInput}
+                {...register("witness_name")}
               />
               <br />
               <label htmlFor="witness_no" className={cf.label}>
@@ -485,7 +459,7 @@ function Complaintform(props) {
               <input
                 type="text"
                 name="witness_no"
-                onChange={handleInput}
+                {...register("witness_no")}
                 id=""
                 className={cf.input}
               />
@@ -500,7 +474,7 @@ function Complaintform(props) {
                 cols="45"
                 rows="8"
                 className={cf.textarea}
-                onChange={handleInput}
+                {...register("witness_statement")}
               ></textarea>
             </div>
 
@@ -517,14 +491,16 @@ function Complaintform(props) {
                 cols="45"
                 rows="10"
                 className={cf.textarea}
-                onChange={handleInput}
+                {...register("evidence_info")}
               ></textarea>
               <br />
               <input
                 type="file"
                 name="file"
                 id={cf.file}
-                onChange={handleInput}
+                onChange={(e) => {
+                  setEvidence(e.target.files[0]);
+                }}
                 className={cf.input}
               />
             </div>
@@ -541,7 +517,7 @@ function Complaintform(props) {
                 cols="45"
                 rows="10"
                 className={cf.textarea}
-                onChange={handleInput}
+                {...register("injuries")}
               ></textarea>
             </div>
 
@@ -557,11 +533,9 @@ function Complaintform(props) {
                 cols="45"
                 rows="8"
                 className={cf.textarea}
-                onChange={handleInput}
+                {...register("incident_description")}
               ></textarea>
-              {errors.incident_description && (
-                <p className={cf.ep}>{errors.incident_description}</p>
-              )}
+              <p className={cf.p1}>{errors.incident_description?.message}</p>
             </div>
 
             <div className={cf.item} style={props.theme2}>
@@ -576,7 +550,7 @@ function Complaintform(props) {
                 cols="45"
                 rows="10"
                 className={cf.textarea}
-                onChange={handleInput}
+                {...register("comments")}
               ></textarea>
             </div>
 
@@ -601,12 +575,10 @@ function Complaintform(props) {
               <input
                 type="text"
                 name="complainant_sign"
-                onChange={handleInput}
+                {...register("complainant_sign")}
                 className={cf.input}
               />
-              {errors.complainant_sign && (
-                <p className={cf.ep}>{errors.complainant_sign}</p>
-              )}
+              <p className={cf.p}>{errors.complainant_sign?.message}</p>
               <br />
               <label htmlFor="date" className={cf.label}>
                 Date:
