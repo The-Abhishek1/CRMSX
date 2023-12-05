@@ -61,7 +61,7 @@
 .results {
   position: absolute;
   background-color: white;
-  left: 140px;
+  left: 112px;
   width: 55%;
   top: 44px;
   border-radius: 5px;
@@ -80,8 +80,9 @@
 }
 .arrowRight {
   margin-top: -23px;
-  position: relative;
-  left: 315px;
+  position: absolute;
+  top: 30px;
+  right: 7px;
   padding: 3px;
   cursor: pointer;
 }
@@ -109,5 +110,8 @@
 @media screen and (min-width: 1000px) {
   .inputwrapper {
     left: 20rem;
+  }
+  .results {
+    left: 20.8%;
   }
 }
