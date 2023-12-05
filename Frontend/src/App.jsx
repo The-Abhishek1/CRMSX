@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+<<<<<<< HEAD
 import Chargesheet from "./assets/Components/Chargesheet/Chargesheet";
 import Complaintform from "./assets/Components/Complaint/Complaintform";
 import Dashboard from "./assets/Components/Dashoard/Dashboard";
@@ -11,6 +12,22 @@ import About from "./assets/Components/About/About";
 import Contact from "./assets/Components/Contact/Contact";
 import Feedback from "./assets/Components/Feedback/Feedback";
 import Officers from "./assets/Components/Officers/Officers";
+=======
+import Chargesheet from "./Components/Chargesheet/Chargesheet";
+import Complaintform from "./Components/Complaint/Complaintform";
+import Signin from "./Components/Signin/Signin";
+import Signup from "./Components/Signup/Signup";
+import Dashboard from "./Components/Dashoard/Dashboard";
+import NewsList from "./Components/News/newslist";
+import Header from "./Components/Header/Header";
+import Profile from "./Components/Profile/Profile";
+import Settings from "./Components/Settings/Settings";
+import Welcome from "./Components/Welcome/Welcome";
+import About from "./Components/About/About";
+import Contact from "./Components/Contact/Contact";
+import Feedback from "./Components/Feedback/Feedback";
+import Officers from "./Components/Officers/Officers";
+>>>>>>> main
 import { useEffect, useState } from "react";
 import { DarkMode, LightMode } from "@mui/icons-material";
 import a from "./App.module.css";
@@ -40,11 +57,15 @@ function App() {
 
   const theme2 = {
     backgroundColor: dark ? "#18181b" : "",
+<<<<<<< HEAD
     color: dark ? "white" : "",
+=======
+    color: dark ? "white" : "black",
+>>>>>>> main
   };
   const theme_2 = {
     backgroundColor: dark ? "#18181b" : "",
-    color: dark ? "white" : "",
+    color: dark ? "white" : "black",
     boxShadow: dark ? " 1px 1.5px 3px #525252 " : "",
   };
   const themeIcons = {
@@ -58,8 +79,8 @@ function App() {
   const themeSide = {
     backgroundColor: dark ? "#18181b" : "",
     color: dark ? "white" : "",
-    borderBottom: dark ? "1px solid white" : "",
-    borderRight: dark ? "1px solid white" : "",
+    borderBottom: dark ? "1px solid white" : "1px solid white",
+    borderRight: dark ? "1px solid white" : "1px solid white",
   };
 
   const lightMode = () => {
