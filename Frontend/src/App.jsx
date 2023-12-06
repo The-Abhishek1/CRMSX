@@ -78,7 +78,7 @@ function App() {
   };
   return (
     <>
-      {light ? (
+{/*       {light ? (
         // <LightMode
         //   className={a.light}
         //   onClick={lightMode}
@@ -93,7 +93,7 @@ function App() {
         //   style={lightTheme}
         //   sx={{ fontSize: 25 }}
         // />
-      ) : null}
+      ) : null} */}
 
       <Routes>
         <Route path="/" element={<Welcome theme1={theme1} theme={theme} />} />
