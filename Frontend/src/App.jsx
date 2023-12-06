@@ -12,7 +12,7 @@ import Contact from "./assets/Components/Contact/Contact";
 import Feedback from "./assets/Components/Feedback/Feedback";
 import Officers from "./assets/Components/Officers/Officers";
 import { useEffect, useState } from "react";
-// import { DarkMode, LightMode } from "@mui/icons-material";
+import { DarkMode, LightMode } from "@mui/icons-material";
 import a from "./App.module.css";
 import OfficerView from "./assets/Components/Officers/OfficerView";
 import OfficerAdd from "./assets/Components/Officers/OfficerAdd";
@@ -78,22 +78,22 @@ function App() {
   };
   return (
     <>
-{/*       {light ? (
-        // <LightMode
-        //   className={a.light}
-        //   onClick={lightMode}
-        //   style={darkTheme}
-        //   sx={{ fontSize: 25 }}
-        // />
+      {light ? (
+        <LightMode
+          className={a.light}
+          onClick={lightMode}
+          style={darkTheme}
+          sx={{ fontSize: 25 }}
+        />
       ) : null}
       {dark ? (
-        // <DarkMode
-        //   className={a.dark}
-        //   onClick={darkMode}
-        //   style={lightTheme}
-        //   sx={{ fontSize: 25 }}
-        // />
-      ) : null} */}
+        <DarkMode
+          className={a.dark}
+          onClick={darkMode}
+          style={lightTheme}
+          sx={{ fontSize: 25 }}
+        />
+      ) : null}
 
       <Routes>
         <Route path="/" element={<Welcome theme1={theme1} theme={theme} />} />
