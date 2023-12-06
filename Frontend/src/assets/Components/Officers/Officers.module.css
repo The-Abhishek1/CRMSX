@@ -132,6 +132,8 @@
   left: 15%;
   width: 70%;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: #a1a1aa;
   position: relative;
   padding: 50px 50px 20px 90px;
@@ -166,7 +168,7 @@
   width: 100%;
 }
 .b {
-  height: 30px;
+  padding: 10px;
   width: 100px;
   border: none;
   border-radius: 5px;
